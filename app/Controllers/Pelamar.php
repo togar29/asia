@@ -67,15 +67,7 @@ class Pelamar extends BaseController
 		];
 		return view('pelamar/add/pertanyaanlain', $data);
 	}
-	public function pilihanbergandatahapi()
-	{
-		$pilgantahapi = $this->pilganModel->findAll();
-		$data = [
-			'title' => 'Pertanyaan',
-			'pilgantahapi' => $pilgantahapi
-		];
-		return view('ujian/add/pilgantahapi', $data);
-	}
+
 
 
 	public function save()

@@ -40,6 +40,15 @@ class Admin extends BaseController
 		];
 		return view('admin/add/pilihanberganda', $data);
 	}
+	public function tahapia()
+	{
+		$jenistess = $this->jenistesModel->findAll();
+		$data = [
+			'title' => 'Jenis Tes',
+			'jenistes' => $jenistess,
+		];
+		return view('admin/add/tahap_i_a', $data);
+	}
 
 
 	public function save()
