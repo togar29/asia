@@ -19,11 +19,12 @@
         <!-- Isi Data Profil-->
 
         <div class="col-md-12">
-          <form>
+          <form action="/pelamar/savekeluarga" method="POST">
+            <?= csrf_field(); ?>
             <div class="form-group row">
-              <label for="username" class="col-4 col-form-label">Hubungan</label>
+              <label for="hubungan" class="col-4 col-form-label">Hubungan</label>
               <div class="col-md">
-                <select class="custom-select" required="required">
+                <select class="custom-select" required="required" name="hubungan">
                   <option selected>Pilih Hubungan</option>
                   <option value="Ayah">Ayah</option>
                   <option value="Istri">Istri</option>
@@ -46,6 +47,12 @@
               </div>
             </div>
             <div class="form-group row">
+              <label for="umur" class="col-4 col-form-label">Umur</label>
+              <div class="col-8">
+                <input id="umur" name="umur" placeholder="Umur" class="form-control here" required="required" type="number">
+              </div>
+            </div>
+            <div class="form-group row">
               <label for="text" class="col-4 col-form-label">Nomor HP</label>
               <div class="col-8">
                 <input id="nohp" name="nohp" placeholder="Nomor HP" class="form-control here" required="required" type="text">
@@ -63,11 +70,12 @@
                 <input id="pekerjaan" name="pekerjaan" placeholder="Pekerjaan" class="form-control here" required="required" type="text">
               </div>
             </div>
-            <div class="form-check">
-              <input class="form-check-input is-invalid" type="checkbox" value="Ya" id="tanggungan" name="checktanggungan">
-              <label class="form-check-label" for="tanggungan">
-                Apakah Tanggungan Keluarga?
-              </label>
+            <div class="form-group row">
+              <label for="tanggungan" class="col-4 col-form-label">Apakah Tanggungan?</label>
+              <div class="col-8">
+                <input type="radio" aria-label="Radio button for following text input" value="ya" name="tanggungan"> Ya
+                <input type="radio" aria-label="Radio button for following text input" value="tidak" name="tanggungan"> Tidak
+              </div>
             </div>
             <div class="form-group row">
               <div class="offset-4 col-8">

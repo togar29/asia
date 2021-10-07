@@ -13,7 +13,8 @@
     </div>
     <div class="card-body">
       <div class="row py-2">
-        <a href="#" class="btn btn-success col-md-12">Tambah Data</a>
+
+        <a href="datakeluargaadd" class="btn btn-success col-md-12">Tambah Data</a>
       </div>
 
       <div class="table-responsive">
@@ -22,35 +23,27 @@
             <tr>
               <th>Hubungan</th>
               <th>Nama</th>
+              <th>Alamat</th>
               <th>Umur</th>
               <th>No HP</th>
-              <th>Alamat</th>
               <th>Pendidikan</th>
               <th>Pekerjaan</th>
+              <th>tanggungan</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>Hubungan</th>
-              <th>Nama</th>
-              <th>Umur</th>
-              <th>No HP</th>
-              <th>Alamat</th>
-              <th>Pendidikan</th>
-              <th>Pekerjaan</th>
-            </tr>
-          </tfoot>
           <tbody>
-            <tr>
-              <td>Ayah</td>
-              <td>Samsudin</td>
-              <td>61</td>
-              <td>08232322</td>
-              <td>Jl. halaman</td>
-              <td>S1</td>
-              <td>Kuli</td>
-            </tr>
-
+            <?php foreach ($keluarga as $k) : ?>
+              <tr>
+                <td><?= $k['hubungan']; ?></td>
+                <td><?= $k['nama']; ?></td>
+                <td><?= $k['alamat']; ?></td>
+                <td><?= $k['umur']; ?></td>
+                <td><?= $k['nohp']; ?></td>
+                <td><?= $k['pendidikan']; ?></td>
+                <td><?= $k['pekerjaan']; ?></td>
+                <td><?= $k['tanggungan']; ?></td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>

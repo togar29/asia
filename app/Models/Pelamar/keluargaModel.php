@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class keluargaModel extends Model
 {
-  protected $table  = 'pengalamankerja';
+  protected $table  = 'datakeluarga';
   protected $useTimestamp = true;
-  protected $allowedFields = ['userId', 'namaPerusahaan', 'jabatanAwal', 'jabatanAkhir', 'mulaiBekerja', 'akhirBekerja', 'gaji', 'namaAtasan', 'alasanKeluar'];
+  protected $allowedFields = ['userId', 'hubungan', 'nama', 'alamat', 'nohp', 'pendidikan', 'pekerjaan', 'tanggungan',];
 }
