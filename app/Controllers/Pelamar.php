@@ -5,7 +5,10 @@ namespace App\Controllers;
 use App\Models\Pelamar\pengalamankerjaModel;
 use App\Models\Admin\pilganModel;
 use App\Models\Pelamar\keluargaModel;
+use App\Models\Pelamar\jawabanModel;
 use Myth\Auth\Models\UserModel;
+use App\Models\Admin\pertanyaanessayModel;
+use App\Models\Admin\jenistesModel;
 
 
 class Pelamar extends BaseController
@@ -20,6 +23,9 @@ class Pelamar extends BaseController
 		$this->pilganModel = new pilganModel();
 		$this->UserModel = new UserModel();
 		$this->keluargaModel = new keluargaModel();
+		$this->jawabanModel = new jawabanModel();
+		$this->pertanyaanessayModel = new pertanyaanessayModel();
+		$this->jenistesModel = new jenistesModel;
 	}
 
 
@@ -76,8 +82,13 @@ class Pelamar extends BaseController
 	}
 	public function pertanyaan()
 	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'pertanyaan-profil'])->first();
+		$pertanyaanessay = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+
 		$data = [
-			'title' => 'Pertanyaan'
+			'title' => 'Pertanyaan',
+			'pertanyaan' => $pertanyaanessay,
+
 		];
 		return view('pelamar/add/pertanyaanlain', $data);
 	}
@@ -113,5 +124,22 @@ class Pelamar extends BaseController
 			'alasanKeluar' => $this->request->getVar('alasankeluar'),
 		]);
 		return redirect()->to('Pelamar/pengalamankerjaview');
+	}
+	public function savepertanyaanessay()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'pertanyaan-profil'])->first();
+		$pertanyaanessay = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$i = 0;
+		foreach ($pertanyaanessay as $k) {
+			$this->jawabanModel->save([
+				'userId' => user()->id,
+				'jenisTes' => $jenistess['id'],
+				'jawaban' => $this->request->getVar('jawaban' . $i),
+				'kunci' => '-'
+			]);
+			$i++;
+		}
+
+		return redirect()->to('/');
 	}
 }
