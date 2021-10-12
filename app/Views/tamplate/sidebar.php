@@ -36,9 +36,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List Test:</h6>
-            <a class="collapse-item" href="buttons.html">Berhitung</a>
-            <a class="collapse-item" href="cards.html">Ketelitian</a>
-            <a class="collapse-item" href="cards.html">Psikologi</a>
+            <a class="collapse-item" href="/ujian/tahap1a">Tahap 1 Bagian A</a>
+            <a class="collapse-item" href="/ujian/tespenalaranlogis">Tes Penalaran Logis</a>
+            <a class="collapse-item" href="/ujian/tespenalarananalitis">Tes Penalaran Analitis</a>
+
           </div>
         </div>
       </li>

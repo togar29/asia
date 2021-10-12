@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Admin\jenistesModel;
 use App\Models\Admin\pilganModel;
 use App\Models\Admin\pertanyaanessayModel;
+use App\Models\Admin\teskecocokanModel;
 
 class Admin extends BaseController
 {
@@ -16,6 +17,7 @@ class Admin extends BaseController
 		$this->jenistesModel = new jenistesModel;
 		$this->pilganModel = new pilganModel();
 		$this->pertanyaanessayModel = new pertanyaanessayModel();
+		$this->teskecocokanModel = new teskecocokanModel();
 	}
 
 
@@ -41,14 +43,14 @@ class Admin extends BaseController
 		];
 		return view('admin/add/pilihanberganda', $data);
 	}
-	public function tahapia()
+	public function teskecocokanobjek()
 	{
 		$jenistess = $this->jenistesModel->findAll();
 		$data = [
-			'title' => 'Jenis Tes',
+			'title' => 'Tahap 1 Bagian A',
 			'jenistes' => $jenistess,
 		];
-		return view('admin/add/tahap_i_a', $data);
+		return view('admin/add/teskecocokanobjek', $data);
 	}
 	public function pertanyaanprofil()
 	{
@@ -59,6 +61,7 @@ class Admin extends BaseController
 		];
 		return view('admin/add/pertanyaanessay', $data);
 	}
+
 
 
 	public function save()
@@ -96,5 +99,27 @@ class Admin extends BaseController
 			'pertanyaan' => $this->request->getVar('soal'),
 		]);
 		return redirect()->to('Admin/' . $a);
+	}
+	public function saveteskecocokan()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-1-bagian-a'])->first();
+		for ($i = 0; $i < 10; $i++) {
+			$a = $this->request->getVar('nilaia' . $i);
+			$b = $this->request->getVar('nilaib' . $i);
+			$nilai = "";
+			if (strcmp($a, $b) == 0) {
+				$nilai = "benar";
+			} else {
+				$nilai = "salah";
+			}
+			$this->teskecocokanModel->save([
+				'jenisTes' => $jenistess['id'],
+				'nilaiA' => $a,
+				'nilaiB' => $b,
+				'kunci' => $nilai
+
+			]);
+		}
+		return redirect()->to('Admin');
 	}
 }

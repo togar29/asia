@@ -17,6 +17,7 @@ class Pelamar extends BaseController
 	protected $pilganModel;
 	protected $UserModel;
 	protected $keluargaModel;
+
 	public function __construct()
 	{
 		$this->pengalamankerjaModel = new pengalamankerjaModel;

@@ -19,7 +19,7 @@
 
         <div class="col-md-12">
 
-          <form action="" method="POST">
+          <form action="saveteskecocokan" method="POST">
             <div class="table-responsif">
               <p></p>
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -27,20 +27,16 @@
                   <tr>
                     <th>nilai 1</th>
                     <th>nilai 2</th>
-                    <th>kunci</th>
                   </tr>
                 </thead>
                 <tbody>
 
                   <?php
-
                   for ($x = 0; $x < 10; $x++) {
                   ?>
                     <tr>
                       <td><input id="nilaia<?= $x; ?>" name="nilaia<?= $x; ?>" placeholder="nilai A" class="form-control here" type="text"></td>
                       <td><input id="nilaib<?= $x; ?>" name="nilaib<?= $x; ?>" placeholder="nilai B" class="form-control here" type="text"></td>
-
-                      <td><input type="checkbox" name="kunci" aria-label="Checkbox for following text input"></td>
                     </tr>
                   <?php } ?>
                 </tbody>

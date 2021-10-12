@@ -16,7 +16,7 @@
       </div>
       <div class="table-responsive mt ">
         <?php
-        $i = 1;
+        $i = 0;
         foreach ($pilgantahapi as $k) :
           $id = $k["id"];
           $pilihan_a = $k["a"];
@@ -25,41 +25,41 @@
           $pilihan_d = $k["d"];
           $pilihan_e = $k["e"];
         ?>
-          <form action="" method="POST">
+          <form action="savepilgani/tes-penalaran-analisis" method="POST">
             <table>
               <tbody>
                 <div class="form-group row">
 
                   <tr>
-                    <td><?= $i . ". "  . $k['soal']; ?>.</td>
+                    <td><?= $i + 1 . ". "  . $k['soal']; ?>.</td>
                   </tr>
                 </div>
                 <tr>
                   <td colspan="8">
-                    <input type="radio" aria-label="Radio button for following text input" value="a" name="<?= $i; ?>"><?php echo " A. $pilihan_a"; ?>
+                    <input type="radio" aria-label="Radio button for following text input" value="a" name="jawaban<?= $i; ?>"><?php echo " A. $pilihan_a"; ?>
                   </td>
                 </tr>
                 <tr>
                   <td colspan="6">
-                    <input type="radio" aria-label="Radio button for following text input" value="b" name="<?= $i; ?>"><?php echo " B. $pilihan_b"; ?>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td colspan="6">
-                    <input type="radio" aria-label="Radio button for following text input" value="c" name="<?= $i; ?>"><?php echo " C. $pilihan_c"; ?>
+                    <input type="radio" aria-label="Radio button for following text input" value="b" name="jawaban<?= $i; ?>"><?php echo " B. $pilihan_b"; ?>
                   </td>
                 </tr>
 
                 <tr>
                   <td colspan="6">
-                    <input type="radio" aria-label="Radio button for following text input" value="d" name="<?= $i; ?>"><?php echo " D. $pilihan_d"; ?>
+                    <input type="radio" aria-label="Radio button for following text input" value="c" name="jawaban<?= $i; ?>"><?php echo " C. $pilihan_c"; ?>
                   </td>
                 </tr>
 
                 <tr>
                   <td colspan="6">
-                    <input type="radio" aria-label="Radio button for following text input" value="e" name="<?= $i; ?>"><?php echo " E. $pilihan_e"; ?>
+                    <input type="radio" aria-label="Radio button for following text input" value="d" name="jawaban<?= $i; ?>"><?php echo " D. $pilihan_d"; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="6">
+                    <input type="radio" aria-label="Radio button for following text input" value="e" name="jawaban<?= $i; ?>"><?php echo " E. $pilihan_e"; ?>
                   </td>
                 </tr>
               </tbody>
