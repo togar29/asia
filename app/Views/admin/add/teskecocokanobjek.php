@@ -21,24 +21,30 @@
 
           <form action="saveteskecocokan" method="POST">
             <div class="table-responsif">
-              <p></p>
+              <div class="form-group row">
+                <label for="soal" class="col-4 col-form-label">Jumlah Soal</label>
+                <div class="col-3 offset-3">
+                  <input type="number" class="form-control" id="jumlahsoal" name="jumlahsoal" placeholder="Jumlah soal">
+                </div>
+                <br>
+                <div class="col-2">
+                  <a href="#" class="btn btn-success" onclick="jumlahsoal().doNotSubmit()" id="btnjumlahsoal">Tambah Jumlah</a>
+                </div>
+              </div>
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>nilai 1</th>
-                    <th>nilai 2</th>
+
+                    <th scope="col">#</th>
+                    <th scope="col">nilai 1</th>
+                    <th scope="col">nilai 2</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="here">
+                  <tr>
 
-                  <?php
-                  for ($x = 0; $x < 10; $x++) {
-                  ?>
-                    <tr>
-                      <td><input id="nilaia<?= $x; ?>" name="nilaia<?= $x; ?>" placeholder="nilai A" class="form-control here" type="text"></td>
-                      <td><input id="nilaib<?= $x; ?>" name="nilaib<?= $x; ?>" placeholder="nilai B" class="form-control here" type="text"></td>
-                    </tr>
-                  <?php } ?>
+                  </tr>
+
                 </tbody>
               </table>
             </div>
@@ -56,6 +62,51 @@
   </div>
 
 </div>
+
+<script>
+  function jumlahsoal() {
+    var dijalankan = 0;
+    var count = 0;
+    var x = document.getElementById("jumlahsoal");
+    var p = document.getElementById("here");
+
+    for (let i = 0; i < x.value; i++) {
+
+
+      var addtr = document.createElement('tr');
+      p.appendChild(addtr);
+
+
+      var addth1 = document.createElement('th');
+      var addtd1 = document.createElement('td');
+      var addtd2 = document.createElement('td');
+      addtr.appendChild(addth1);
+      addtr.appendChild(addtd1);
+      addtr.appendChild(addtd2);
+
+      addth1.innerHTML = (i + 1);
+      var addinput = document.createElement('input');
+      addinput.setAttribute("id", "nilaia" + i);
+      addinput.setAttribute("name", "nilaia" + i);
+      addinput.setAttribute("placeholder", "nilaia A");
+      addinput.setAttribute("class", "form-control here");
+      addinput.setAttribute("type", "text");
+      addtd1.appendChild(addinput);
+
+      var creatediv1 = document.createElement('input');
+      creatediv1.setAttribute("id", "nilaib" + i);
+      creatediv1.setAttribute("name", "nilaib" + i);
+      creatediv1.setAttribute("placeholder", "nilaib B");
+      creatediv1.setAttribute("class", "form-control here");
+      creatediv1.setAttribute("type", "text");
+      addtd2.appendChild(creatediv1);
+    }
+
+    x.setAttribute("readonly", true);
+
+  }
+</script>
+
 
 <?= $this->endSection(); ?>
 <!-- /.container-fluid -->

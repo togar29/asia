@@ -11,6 +11,7 @@ class Admin extends BaseController
 {
 	protected $jenistesModel;
 	protected $pertanyaanessayModel;
+	protected $url;
 
 	public function __construct()
 	{
@@ -18,65 +19,67 @@ class Admin extends BaseController
 		$this->pilganModel = new pilganModel();
 		$this->pertanyaanessayModel = new pertanyaanessayModel();
 		$this->teskecocokanModel = new teskecocokanModel();
+		$this->url = current_url();
 	}
 
 
 	public function jenistes()
 	{
-		return view('admin/add/jenistes');
+		$data = [
+			'title' => 'Jenis Tes',
+		];
+		return view('admin/add/jenistes', $data);
 	}
 	public function jenistesview()
 	{
-		$jenistess = $this->jenistesModel->findAll();
+
+		$jenistess = $this->jenistesModel->orderBy('id', 'asc')->findAll();
 		$data = [
 			'title' => 'Jenis Tes',
 			'jenistes' => $jenistess,
+
 		];
 		return view('admin/view/jenistes', $data);
 	}
 	public function pilihanberganda()
 	{
-		$jenistess = $this->jenistesModel->findAll();
+		$jenistess = $this->jenistesModel->orderBy('id', 'asc')->findAll();
 		$data = [
-			'title' => 'Jenis Tes',
+			'title' => 'Tambah Soal Pilihan Berganda',
 			'jenistes' => $jenistess,
 		];
 		return view('admin/add/pilihanberganda', $data);
 	}
 	public function teskecocokanobjek()
 	{
-		$jenistess = $this->jenistesModel->findAll();
+		$jenistess = $this->jenistesModel->orderBy('id', 'asc')->findAll();
 		$data = [
 			'title' => 'Tahap 1 Bagian A',
 			'jenistes' => $jenistess,
 		];
 		return view('admin/add/teskecocokanobjek', $data);
 	}
-	public function pertanyaanprofil()
+	public function pertanyaan()
 	{
-		$jenistess = $this->jenistesModel->findAll();
+
+		$jenistess = $this->jenistesModel->orderBy('id', 'asc')->findAll();
 		$data = [
-			'title' => 'pertanyaan Profil',
+			'title' => 'Pertanyaan',
 			'jenistes' => $jenistess,
 		];
 		return view('admin/add/pertanyaanessay', $data);
 	}
 
 
-
 	public function save()
 	{
-
-
-		$page = $this->request->getVar('page');
 		$slug = url_title($this->request->getVar('jenisTes'), '-', true);
 		$this->jenistesModel->save([
 			'jenisTes' => $this->request->getVar('jenisTes'),
 			'keterangan' => $this->request->getVar('keterangan'),
 			'slug' => $slug,
-
 		]);
-		return redirect()->to('Admin/jenistesview');
+		return redirect()->to(previous_url());
 	}
 	public function savepilihanberganda()
 	{
@@ -94,16 +97,29 @@ class Admin extends BaseController
 	}
 	public function savepertanyaanessay($a)
 	{
-		$this->pertanyaanessayModel->save([
-			'jenisTes' => $this->request->getVar('jenistes'),
-			'pertanyaan' => $this->request->getVar('soal'),
-		]);
+		$jenistesss = $this->request->getVar('jenistes');
+		$jumlahsoal = $this->request->getVar('jumlahsoal');
+		for ($i = 0; $i < $jumlahsoal; $i++) {
+			if (is_null($this->request->getVar('kunci' . $i))) {
+				$this->pertanyaanessayModel->save([
+					'jenisTes' => $jenistesss,
+					'pertanyaan' => $this->request->getVar('soal' . $i),
+				]);
+			} else {
+				$this->pertanyaanessayModel->save([
+					'jenisTes' => $jenistesss,
+					'pertanyaan' => $this->request->getVar('soal' . $i),
+					'kunci' => $this->request->getVar('kunci' . $i),
+				]);
+			}
+		}
 		return redirect()->to('Admin/' . $a);
 	}
 	public function saveteskecocokan()
 	{
 		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-1-bagian-a'])->first();
-		for ($i = 0; $i < 10; $i++) {
+		$jumlahsoal = $this->request->getVar('jumlahsoal');
+		for ($i = 0; $i < $jumlahsoal; $i++) {
 			$a = $this->request->getVar('nilaia' . $i);
 			$b = $this->request->getVar('nilaib' . $i);
 			$nilai = "";
@@ -120,6 +136,6 @@ class Admin extends BaseController
 
 			]);
 		}
-		return redirect()->to('Admin');
+		return redirect()->to('/');
 	}
 }

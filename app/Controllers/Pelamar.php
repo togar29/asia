@@ -36,7 +36,11 @@ class Pelamar extends BaseController
 	}
 	public function updatedata()
 	{
-		return view('pelamar/add/profiladd');
+		$data = [
+			'title' => 'Profil',
+
+		];
+		return view('pelamar/add/profiladd', $data);
 	}
 	public function datakeluargaview()
 	{
@@ -51,24 +55,36 @@ class Pelamar extends BaseController
 	public function datakeluargaadd()
 	{
 
-
-		return view('pelamar/add/datakeluargaadd');
+		$data = [
+			'title' => 'Data Keluarga',
+		];
+		return view('pelamar/add/datakeluargaadd', $data);
 	}
 	public function pendidikanformalview()
 	{
-		return view('pelamar/pendidikanformalview');
+		$data = [
+			'title' => 'Pendidikan Formal',
+		];
+		return view('pelamar/pendidikanformalview', $data);
 	}
 
 	public function pendidikanformaladd()
 	{
-		return view('pelamar/add/pendidikanformaladd');
+		$data = [
+			'title' => 'Pendidikan Formal',
+		];
+		return view('pelamar/add/pendidikanformaladd', $data);
 	}
 	public function pendidikannonformaladd()
 	{
-		return view('pelamar/add/pendidikannonformaladd');
+		$data = [
+			'title' => 'Pendidikan Non-Formal',
+		];
+		return view('pelamar/add/pendidikannonformaladd', $data);
 	}
 	public function pengalamankerjaview()
 	{
+
 		$pengalamankerja = $this->pengalamankerjaModel->where(['userID' => user()->id])->findAll();
 		$data = [
 			'title' => 'Pengalaman Kerja',
@@ -79,7 +95,10 @@ class Pelamar extends BaseController
 	}
 	public function pengalamankerjaadd()
 	{
-		return view('pelamar/add/pengalamankerjaadd');
+		$data = [
+			'title' => 'Pengalaman Kerja',
+		];
+		return view('pelamar/add/pengalamankerjaadd', $data);
 	}
 	public function pertanyaan()
 	{

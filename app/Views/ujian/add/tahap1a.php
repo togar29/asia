@@ -30,34 +30,38 @@
             <h6>Beri Tanda bagi yang tidak sama!</h6>
 
             <div class="col mb-4 ">
-              <div class="row ">
+              <div class="row">
                 <?php
                 $i = 0;
                 foreach ($teskecocokan as $k) :
                 ?>
-                  <div class="col-2">
-                    <div class="card text-center bg-light text-black shadow">
 
-                      <div class="card-body justify-content-center">
-                        <label for="" class=""><?= $k['nilaiA']; ?></label> <br>
+                  <div class="col-3">
+                    <div class="card text-center bg-light text-black shadow">
+                      <div class="card-header  text-white bg-secondary">Soal <?= $i + 1; ?></div>
+                      <div class="card-body justify-content-center mb-3">
+                        <label for="" class="" style="font-size: 20px;"><?= $k['nilaiA']; ?></label> <br>
                         <input class="" type="checkbox" id="jawaban<?= $i; ?>" value="benar" name="jawaban<?= $i; ?>"><br>
-                        <label for=""><?= $k['nilaiB']; ?></label>
+                        <label for="" style="font-size: 20px;"><?= $k['nilaiB']; ?></label>
                       </div>
                     </div>
                   </div>
-                <?php $i++;
+                <?php
+                  $i++;
+
                 endforeach; ?>
               </div>
             </div>
-            <button name="submit" type="submit" class="btn btn-primary offset-5">Next</button>
+
+            <button name="submit" type="submit" class="btn btn-primary offset-11">Next</button>
             <hr>
           </form>
-
         </div>
       </div>
-
     </div>
+
   </div>
+</div>
 
 </div>
 

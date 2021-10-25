@@ -6,43 +6,66 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('pelamar/index');
-	}
-	public function user()
-	{
-		return view('user/index');
+		$data = [
+			'title' => 'Beranda'
+		];
+		return view('pelamar/index', $data);
 	}
 	public function pelamar()
 	{
-		return view('pelamar/profiladd');
+		$data = [
+			'title' => 'Profil'
+		];
+		return view('pelamar/profiladd', $data);
 	}
 	public function datakeluargaview()
 	{
-		return view('pelamar/datakeluargaview');
+		$data = [
+			'title' => 'Data Keluarga'
+		];
+		return view('pelamar/datakeluargaview', $data);
 	}
 	public function datakeluargaadd()
 	{
-		return view('pelamar/datakeluargaadd');
+		$data = [
+			'title' => 'Formulir Tambah Data Keluarga'
+		];
+		return view('pelamar/datakeluargaadd', $data);
 	}
 	public function pendidikanformalview()
 	{
-		return view('pelamar/pendidikanformalview');
+		$data = [
+			'title' => 'Pendidikan Formal'
+		];
+		return view('pelamar/pendidikanformalview', $data);
 	}
 
 	public function pendidikanformaladd()
 	{
-		return view('pelamar/pendidikanformaladd');
+		$data = [
+			'title' => 'Formulir Tambah Data Pendidikan Formal'
+		];
+		return view('pelamar/pendidikanformaladd', $data);
 	}
 	public function pendidikannonformaladd()
 	{
-		return view('pelamar/pendidikannonformaladd');
+		$data = [
+			'title' => 'Formulir Tambah Pendidikan Informal'
+		];
+		return view('pelamar/pendidikannonformaladd', $data);
 	}
 	public function pengalamankerjaview()
 	{
-		return view('pelamar/pengalamankerjaview');
+		$data = [
+			'title' => 'Pengalaman Kerja'
+		];
+		return view('pelamar/pengalamankerjaview', $data);
 	}
 	public function pengalamankerjaadd()
 	{
-		return view('pelamar/pengalamankerjaadd');
+		$data = [
+			'title' => 'Formulir Tambah Pengalaman Pekerjaan'
+		];
+		return view('pelamar/pengalamankerjaadd', $data);
 	}
 }

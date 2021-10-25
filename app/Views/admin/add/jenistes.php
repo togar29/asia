@@ -22,7 +22,7 @@
           <form action="save" method="POST">
             <?= csrf_field(); ?>
 
-            <input id="page" style="display: none;" name="page" class="form-control here" type="text" value="jenistes">
+            <input style="display: none;" name="page" class="form-control here" type="text" value="">
             <div class="form-group row">
               <label for="name" class="col-4 col-form-label">Nama Tes</label>
               <div class="col-8">
