@@ -17,51 +17,51 @@
         <!-- Isi Data Profil-->
 
         <div class="col-md-12">
-          <form action="/pelamar/save" method="POST">
+          <form action="/pelamar/savepengalamankerja" method="POST">
             <?= csrf_field(); ?>
-
+            <?= $validation->listErrors(); ?>
             <input id="page" style="display: none;" name="page" class="form-control here" type="text" value="pengalamankerjaadd">
             <div class="form-group row">
               <label for="name" class="col-4 col-form-label">Nama Perusahaan</label>
               <div class="col-8">
-                <input id="namaperusahaan" name="namaperusahaan" placeholder="Nama Perusahaan" class="form-control here" type="text" autofocus required>
+                <input id="namaperusahaan" name="namaperusahaan" value="<?= old('namaperusahaan') ?>" placeholder="Nama Perusahaan" required="required" class="form-control here <?= ($validation->hasError('namaperusahaan')) ? 'is-invalid' : ''; ?>" type=" text" autofocus>
               </div>
             </div>
             <div class="form-group row">
               <label for="jabatanawal" class="col-4 col-form-label">Jabatan Awal</label>
               <div class="col-8">
-                <input id="jabatanawal" name="jabatanawal" placeholder="Jabatan Awal" class="form-control here" type="text">
+                <input id="jabatanawal" name="jabatanawal" value="<?= old('jabatanawal') ?>" placeholder="Jabatan Awal" required="required" class="form-control here" type="text">
               </div>
             </div>
             <div class="form-group row">
               <label for="jabatanawal" class="col-4 col-form-label">Jabatan Akhir</label>
               <div class="col-8">
-                <input id="jabatanakhir" name="jabatanakhir" placeholder="Jabatan Akhir" class="form-control here" type="text">
+                <input id="jabatanakhir" name="jabatanakhir" value="<?= old('jabatanakhir') ?>" placeholder="Jabatan Akhir" required="required" class="form-control here" type="text">
               </div>
             </div>
             <div class=" form-group row">
               <label for="website" class="col-4 col-form-label">Tahun</label>
               <div class="col-8">
-                <input id="daritahun" name="daritahun" placeholder="Dari Tahun" class="form-control here" type="date">
-                <input id="daritahun" name="sampaitahun" placeholder="Sampai Tahun" class="form-control here" type="date">
+                <input id="daritahun" name="daritahun" placeholder="Dari Tahun" required="required" class="form-control here" type="date">
+                <input id="daritahun" name="sampaitahun" placeholder="Sampai Tahun" required="required" class="form-control here" type="date">
               </div>
             </div>
             <div class="form-group row">
               <label for="text" class="col-4 col-form-label">Gaji</label>
               <div class="col-8">
-                <input id="gaji" name="gaji" placeholder="gaji" class="form-control here" required="required" type="number">
+                <input id="gaji" name="gaji" value="<?= old('gaji') ?>" placeholder="gaji" class="form-control here" required="required" type="number">
               </div>
             </div>
             <div class="form-group row">
               <label for="name" class="col-4 col-form-label">Nama Atasan</label>
               <div class="col-8">
-                <input id="namaatasan" name="namaatasan" placeholder="Nama Atasan" class="form-control here" type="text" required>
+                <input id="namaatasan" name="namaatasan" value="<?= old('namaatasan') ?>" placeholder="Nama Atasan" required="required" class="form-control here" type="text">
               </div>
             </div>
             <div class="form-group row">
               <label for="infokesehatan" class="col-4 col-form-label">Alasan Keluar</label>
               <div class="col-8">
-                <textarea id="alasankeluar" name="alasankeluar" cols="40" rows="4" class="form-control"></textarea>
+                <textarea id="alasankeluar" name="alasankeluar" value="<?= old('alasankeluar') ?>" cols="40" rows="4" class="form-control"></textarea>
               </div>
             </div>
             <div class="form-group row">

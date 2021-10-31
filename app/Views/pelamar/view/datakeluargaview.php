@@ -24,7 +24,6 @@
               <th>Hubungan</th>
               <th>Nama</th>
               <th>Alamat</th>
-              <th>Umur</th>
               <th>No HP</th>
               <th>Pendidikan</th>
               <th>Pekerjaan</th>
@@ -37,7 +36,6 @@
                 <td><?= $k['hubungan']; ?></td>
                 <td><?= $k['nama']; ?></td>
                 <td><?= $k['alamat']; ?></td>
-                <td><?= $k['umur']; ?></td>
                 <td><?= $k['nohp']; ?></td>
                 <td><?= $k['pendidikan']; ?></td>
                 <td><?= $k['pekerjaan']; ?></td>

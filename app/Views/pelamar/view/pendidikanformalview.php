@@ -13,7 +13,7 @@
     </div>
     <div class="card-body">
       <div class="row py-2">
-        <a href="#" class="btn btn-success col-md-12">Tambah Data</a>
+        <a href="/pelamar/pendidikanformaladd" class="btn btn-success col-md-12">Tambah Data</a>
       </div>
 
       <div class="table-responsive">
@@ -29,27 +29,18 @@
               <th>Keterangan</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>Tingkat Sekolah</th>
-              <th>Nama Sekolah</th>
-              <th>Kota</th>
-              <th>Jurusan</th>
-              <th>Dari Tahun</th>
-              <th>Samapi Tahun</th>
-              <th>Keterangan</th>
-            </tr>
-          </tfoot>
           <tbody>
-            <tr>
-              <td>Ayah</td>
-              <td>Samsudin</td>
-              <td>61</td>
-              <td>08232322</td>
-              <td>Jl. halaman</td>
-              <td>S1</td>
-              <td>Kuli</td>
-            </tr>
+            <?php foreach ($pendidikanformal as $k) : ?>
+              <tr>
+                <td><?= $k['tingkatan']; ?></td>
+                <td><?= $k['namaInstitut']; ?></td>
+                <td><?= $k['kota']; ?></td>
+                <td><?= $k['jurusan']; ?></td>
+                <td><?= $k['tahunMulai']; ?></td>
+                <td><?= $k['tahunAkhir']; ?></td>
+                <td><?= $k['keterangan']; ?></td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>

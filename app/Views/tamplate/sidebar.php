@@ -14,7 +14,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/pelamar">
           <i class="far fa-address-card"></i>
           <span>Profile</span></a>
       </li>

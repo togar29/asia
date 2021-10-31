@@ -19,57 +19,62 @@
         <!-- Isi Data Profil-->
 
         <div class="col-md-12">
-          <form>
+          <form action="/pelamar/savependidikanformal" method="POST" enctype="multipart/form-data">
+            <p class="font-weight-bold"> <?= $validation->listErrors(); ?></p>
             <div class="form-group row">
-              <label for="username" class="col-4 col-form-label">Tingkat Sekolah</label>
+              <label for="tingkatan" class="col-4 col-form-label">Tingkat Sekolah</label>
               <div class="col-md">
-                <select class="custom-select">
-                  <option selected>Pilih Tingkatan</option>
-                  <option value="1">SD</option>
-                  <option value="2">SMP</option>
-                  <option value="3">SMK/SMK</option>
-                  <option value="3">S1</option>
-                  <option value="3">S2</option>
-                  <option value="3">S3</option>
+                <select class="form-control" name="tingkatan" required="required">
+                  <option>Pilih Tingkatan</option>
+                  <option value="SD">SD</option>
+                  <option value="SMP">SMP</option>
+                  <option value="SMA/SMK">SMA/SMK</option>
+                  <option value="S1">S1</option>
+                  <option value="S2">S2</option>
+                  <option value="S3">S3</option>
                 </select>
               </div>
             </div>
             <div class="form-group row">
-              <label for="name" class="col-4 col-form-label">Nama Sekolah/Institut</label>
+              <label for="namasekolah" class="col-4 col-form-label">Nama Sekolah/Institut</label>
               <div class="col-8">
-                <input id="namasekolah" name="namasekolah" placeholder="Nama Sekolah/Institut" class="form-control here" type="text">
+                <input id="namasekolah" name="namasekolah" value="<?= old('namasekolah') ?>" placeholder=" Nama Sekolah/Institut" class="form-control here" type="text">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="lastname" class="col-4 col-form-label">Kota</label>
+              <label for="kota" class="col-4 col-form-label">Kab/Kota</label>
               <div class="col-8">
-                <input id="kota" name="kota" placeholder="Kota" class="form-control here" type="text">
+                <input id="kota" name="kota" placeholder="Kota" value="<?= old('kota') ?>" class="form-control here" type="text">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text" class="col-4 col-form-label">Jurusan</label>
+              <label for="jurusan" class="col-4 col-form-label">Jurusan</label>
               <div class="col-8">
-                <input id="jurusan" name="jurusan" placeholder="Jurusan" class="form-control here" required="required" type="text">
+                <input id="jurusan" name="jurusan" placeholder="Jurusan" value="<?= old('jurusan') ?>" class="form-control here" required="required" type="text">
               </div>
             </div>
             <div class=" form-group row">
-              <label for="website" class="col-4 col-form-label">Tahun</label>
+              <label for="daritahun" class="col-4 col-form-label">Tahun</label>
+              <div class="col-3">
+                <input id="daritahun" name="daritahun" value="<?= old('daritahun') ?>" placeholder="Dari Tahun" class="form-control" type="date">
+              </div>
+              s/d
+              <div class="col-3">
+                <input id="sampaitahun" name="sampaitahun" value="<?= old('sampaitahun') ?>" placeholder="Dari Tahun" class="form-control" type="date">
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <label for="keterangan" class="col-4 col-form-label">Keterangan</label>
               <div class="col-8">
-                <input id="daritahun" name="daritahun" placeholder="Dari Tahun" class="form-control here" type="text">
-                <input id="daritahun" name="sampaitahun" placeholder="Sampai Tahun" class="form-control here" type="text">
+                <input id="keterangan" name="keterangan" value="<?= old('keterangan') ?>" placeholder="Keterangan" class="form-control here" required="required" type="text">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text" class="col-4 col-form-label">Keterangan</label>
+              <label for="ijazah" class="col-4 col-form-label">Ijazah</label>
               <div class="col-8">
-                <input id="keterangan" name="keterangan" placeholder="Keterangan" class="form-control here" required="required" type="text">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="text" class="col-4 col-form-label">Ijazah</label>
-              <div class="col-8">
-                <input type="file" class="form-control" id="customFile" />
+                <input type="file" name="ijazah" class="form-control" id="ijazah" />
               </div>
             </div>
             <div class="form-group row">
