@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Okt 2021 pada 02.04
+-- Waktu pembuatan: 31 Okt 2021 pada 08.50
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -127,7 +127,31 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (21, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-04 07:09:59', 1),
 (22, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-04 07:18:30', 1),
 (23, '::1', 'betsyebamarbun359@gmail.com', NULL, '2021-10-04 18:46:07', 0),
-(24, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-04 18:46:18', 1);
+(24, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-04 18:46:18', 1),
+(25, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-06 08:31:29', 1),
+(26, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-07 08:37:35', 1),
+(27, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-07 12:03:06', 1),
+(28, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-10 00:48:59', 1),
+(29, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-11 22:19:05', 1),
+(30, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-12 08:12:00', 1),
+(31, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-13 09:15:37', 1),
+(32, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-14 08:57:09', 1),
+(33, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-15 08:13:33', 1),
+(34, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-15 18:30:27', 1),
+(35, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-16 23:25:59', 1),
+(36, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-18 09:34:58', 1),
+(37, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-20 00:59:29', 1),
+(38, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-22 17:31:08', 1),
+(39, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-24 00:25:20', 1),
+(40, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-25 09:17:57', 1),
+(41, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-26 07:44:53', 1),
+(42, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-27 08:51:37', 1),
+(43, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-28 09:14:24', 1),
+(44, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-28 09:26:01', 1),
+(45, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-28 19:03:56', 1),
+(46, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-29 07:26:16', 1),
+(47, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-30 21:04:02', 1),
+(48, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-31 01:47:16', 1);
 
 -- --------------------------------------------------------
 
@@ -207,6 +231,22 @@ CREATE TABLE `datakeluarga` (
   `tanggungan` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data untuk tabel `datakeluarga`
+--
+
+INSERT INTO `datakeluarga` (`id`, `userId`, `hubungan`, `nama`, `alamat`, `nohp`, `pendidikan`, `pekerjaan`, `tanggungan`) VALUES
+(1, 3, 'Saudara', 'Immanuel Gultom', NULL, '26387126387126', 'asdasas', 'asdawqwe', 'tidak'),
+(2, 3, 'Istri', 'asa togarma gultom', 'Jl. Hm Yamin', '08976374265', 'SMA', 'Pejabat Korupsi', 'ya'),
+(3, 3, 'Anak', 'ELISDA LUBIS', 'res', '30977864543', '1223', '2321', 'ya'),
+(4, 3, 'Anak', 'Tungirna', 'ajskj', '23124', 'assdn', 'sodkf', 'tidak'),
+(5, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
+(6, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
+(7, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
+(8, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
+(9, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
+(10, 3, 'Anak', 'qweqw sdas', '12sdq', 'wdw', 'wedqwe', 'qwe', 'tidak');
+
 -- --------------------------------------------------------
 
 --
@@ -223,28 +263,45 @@ CREATE TABLE `isian` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `jawaban`
+--
+
+CREATE TABLE `jawaban` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `userId` int(11) UNSIGNED NOT NULL,
+  `jenisTes` int(11) UNSIGNED NOT NULL,
+  `jawaban` text DEFAULT NULL,
+  `kunci` text DEFAULT NULL,
+  `nilai` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `jenistes`
 --
 
 CREATE TABLE `jenistes` (
   `id` int(11) UNSIGNED NOT NULL,
   `jenisTes` varchar(255) DEFAULT NULL,
-  `keterangan` varchar(200) DEFAULT NULL
+  `keterangan` varchar(200) DEFAULT NULL,
+  `slug` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `jenistes`
 --
 
-INSERT INTO `jenistes` (`id`, `jenisTes`, `keterangan`) VALUES
-(1, 'Tes Penalaran Logis', 'Tes Tahap 1'),
-(2, 'Tes Penalaran Analisis', 'Tahap 2'),
-(6, 'Tahap 1 Bagian A', 'Berilah Tanda bagi y'),
-(7, 'Tahap 1 Bagian B', 'Tuliskan dalam bentu'),
-(8, 'Tahap 1 Bagian C', 'Tuliskan dalam bentu'),
-(9, 'Tahap 1 Bagian F', 'Penjumlahan, Pengurangan, Perkalian dan Pembagian'),
-(10, 'Tahap 1 Bagian G', 'Tes Kepribadian'),
-(11, 'Tahap 2 Bagian B', 'Pertanyaan');
+INSERT INTO `jenistes` (`id`, `jenisTes`, `keterangan`, `slug`) VALUES
+(1, 'Tes Penalaran Logis', 'Tes Tahap 1', 'tes-penalaran-logis'),
+(2, 'Tes Penalaran Analisis', 'Tahap 2', 'tes-penalaran-analisis'),
+(6, 'Tahap 1 Bagian A', 'Berilah Tanda bagi y', 'tahap-1-bagian-a'),
+(7, 'Tahap 1 Bagian B', 'Tuliskan dalam bentu', 'tahap-1-bagian-b'),
+(8, 'Tahap 1 Bagian C', 'Tuliskan dalam bentu', 'tahap-1-bagian-c'),
+(9, 'Tahap 1 Bagian F', 'Penjumlahan, Pengurangan, Perkalian dan Pembagian', 'tahap-1-bagian-f'),
+(10, 'Tahap 1 Bagian G', 'Tes Kepribadian', 'tahap-1-bagian-g'),
+(11, 'Tahap 2 Bagian B', 'Pertanyaan', 'tahap-2-bagian-b'),
+(12, 'Pertanyaan Profil', 'Kelengkapan Profil', 'pertanyaan-profil');
 
 -- --------------------------------------------------------
 
@@ -274,7 +331,9 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (5, '2021-09-21-134823', 'App\\Database\\Migrations\\Createkeluarga', 'default', 'App', 1632233254, 5),
 (6, '2021-09-25-163416', 'App\\Database\\Migrations\\Createujianganda', 'default', 'App', 1632588439, 6),
 (7, '2021-10-04-133707', 'App\\Database\\Migrations\\CreateTahap1A', 'default', 'App', 1633355095, 7),
-(8, '2021-10-04-235852', 'App\\Database\\Migrations\\CreateTest', 'default', 'App', 1633392201, 8);
+(8, '2021-10-04-235852', 'App\\Database\\Migrations\\CreateTest', 'default', 'App', 1633392201, 8),
+(9, '2021-10-07-132553', 'App\\Database\\Migrations\\Createpertanyaanprofil', 'default', 'App', 1633613577, 9),
+(10, '2021-10-07-133412', 'App\\Database\\Migrations\\Createjawaban', 'default', 'App', 1633613815, 10);
 
 -- --------------------------------------------------------
 
@@ -289,8 +348,8 @@ CREATE TABLE `pendidikanformal` (
   `namaInstitut` varchar(20) DEFAULT NULL,
   `kota` varchar(20) DEFAULT NULL,
   `jurusan` varchar(20) DEFAULT NULL,
-  `tahunMulai` datetime DEFAULT NULL,
-  `tahunAkhir` datetime DEFAULT NULL,
+  `tahunMulai` date DEFAULT NULL,
+  `tahunAkhir` date DEFAULT NULL,
   `keterangan` text DEFAULT NULL,
   `sertifikat` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -300,7 +359,8 @@ CREATE TABLE `pendidikanformal` (
 --
 
 INSERT INTO `pendidikanformal` (`id`, `userId`, `tingkatan`, `namaInstitut`, `kota`, `jurusan`, `tahunMulai`, `tahunAkhir`, `keterangan`, `sertifikat`) VALUES
-(1, 1, 'SMA', 'SMAN1 Medan', 'Medan', 'IPA', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, NULL);
+(1, 1, 'SMA', 'SMAN1 Medan', 'Medan', 'IPA', '0000-00-00', '0000-00-00', NULL, NULL),
+(4, 3, 'SD', 'SDN 12312 Tj Mangeda', 'Tj Mangedar', '-', '2021-10-13', '2021-10-22', '-', 'betsyebamarbunSD_1.j');
 
 -- --------------------------------------------------------
 
@@ -333,8 +393,9 @@ CREATE TABLE `pengalamankerja` (
   `namaPerusahaan` varchar(30) DEFAULT NULL,
   `jabatanAwal` varchar(20) DEFAULT NULL,
   `jabatanAkhir` varchar(20) DEFAULT NULL,
-  `mulaiBekerja` datetime DEFAULT NULL,
-  `akhirBekerja` datetime DEFAULT NULL,
+  `mulaiBekerja` date DEFAULT NULL,
+  `akhirBekerja` date DEFAULT NULL,
+  `waktubekerja` int(11) UNSIGNED NOT NULL,
   `gaji` int(11) UNSIGNED NOT NULL,
   `namaAtasan` varchar(30) NOT NULL,
   `alasanKeluar` text DEFAULT NULL
@@ -344,8 +405,31 @@ CREATE TABLE `pengalamankerja` (
 -- Dumping data untuk tabel `pengalamankerja`
 --
 
-INSERT INTO `pengalamankerja` (`id`, `userId`, `namaPerusahaan`, `jabatanAwal`, `jabatanAkhir`, `mulaiBekerja`, `akhirBekerja`, `gaji`, `namaAtasan`, `alasanKeluar`) VALUES
-(6, 3, 'Pt Asia SInar Inti Abadi', 'Kernek', 'Kernek', '2021-09-16 00:00:00', NULL, 4294967295, 'Sukro', 'Manakko Roha Ni Si Seba nauliiiiiiiii');
+INSERT INTO `pengalamankerja` (`id`, `userId`, `namaPerusahaan`, `jabatanAwal`, `jabatanAkhir`, `mulaiBekerja`, `akhirBekerja`, `waktubekerja`, `gaji`, `namaAtasan`, `alasanKeluar`) VALUES
+(6, 3, 'Pt Asia SInar Inti Abadi', 'Kernek', 'Kernek', '2021-09-16', NULL, 0, 4294967295, 'Sukro', 'Manakko Roha Ni Si Seba nauliiiiiiiii'),
+(44, 3, 'Pt. Simulator selatan', 'Staff', 'Staff', '2021-07-12', '2021-10-13', 0, 1231231231, 'Sitakko Manuk', 'PHK Besar-besaran');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pertanyaanessay`
+--
+
+CREATE TABLE `pertanyaanessay` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `jenisTes` int(11) UNSIGNED NOT NULL,
+  `pertanyaan` text DEFAULT NULL,
+  `kunci` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `pertanyaanessay`
+--
+
+INSERT INTO `pertanyaanessay` (`id`, `jenisTes`, `pertanyaan`, `kunci`) VALUES
+(72, 9, '9 x 0 + 25 + 75 - 40', '60'),
+(73, 9, '9 x 0 + 25 + 75 - 40', '60'),
+(74, 9, '8 x 0 + 25 + 75 - 40', '60');
 
 -- --------------------------------------------------------
 
@@ -360,6 +444,21 @@ CREATE TABLE `tahap_i_a` (
   `nilaiB` varchar(255) DEFAULT NULL,
   `kunci` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tahap_i_a`
+--
+
+INSERT INTO `tahap_i_a` (`id`, `jenisTes`, `nilaiA`, `nilaiB`, `kunci`) VALUES
+(41, 6, '1234', '1234', 'benar'),
+(42, 6, '3212', '3123', 'salah'),
+(43, 6, '4325', '4325', 'benar'),
+(44, 6, '7831', '7831', 'benar'),
+(45, 6, 'asdvbna', 'asgfdha', 'salah'),
+(46, 6, 'toera', 'toera', 'benar'),
+(47, 6, '415271', '451271', 'salah'),
+(48, 6, '2363517', '12531625', 'salah'),
+(49, 6, '2716', '2716', 'benar');
 
 -- --------------------------------------------------------
 
@@ -450,7 +549,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `informasikesehatan`, `statusperkawinan`, `pendidikanterakhir`, `golongandarah`, `agama`, `tanggallahir`, `avatar`, `provider_id`, `username`, `user_image`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`, `nik`, `jeniskelamin`, `alamat`, `nohp`) VALUES
 (1, 'togar', 'togarma29@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.svg', '', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (2, NULL, 'asatogarmagultom@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'togarma', 'default.svg', '$2y$10$c4WxjEmpc7mtemuIu1ccYe0Gb6Fs1orlBVTsRRRbzgmjwv5kTg/0i', NULL, NULL, NULL, '0b7c50ed9f03f1840a5e7a698acbdbba', NULL, NULL, 0, 0, '2021-09-19 03:14:01', '2021-09-19 03:14:01', NULL, NULL, NULL, NULL, NULL),
-(3, NULL, 'betsyebamarbun359@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'betsyebamarbun', 'default.svg', '$2y$10$O4WlEO5DaN2yDBXbL7qLHOi5CrCQYpGTI0uEtuIrADzz/juaVJfVq', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-19 03:17:44', '2021-09-19 03:49:30', NULL, NULL, NULL, NULL, NULL);
+(3, 'Betsyeba Marbun', 'betsyebamarbun359@gmail.com', NULL, 'Belum Menikah', 'S1', 'B', 'Kristen', '1996-01-09', 'betsyebamarbun_1.jpg', NULL, 'betsyebamarbun', 'default.svg', '$2y$10$O4WlEO5DaN2yDBXbL7qLHOi5CrCQYpGTI0uEtuIrADzz/juaVJfVq', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-19 03:17:44', '2021-10-29 08:25:12', NULL, 123432231, 'perempuan', 'Jl Hm Yamin Gang India No 2', '085212312312');
 
 --
 -- Indexes for dumped tables
@@ -532,6 +631,14 @@ ALTER TABLE `isian`
   ADD KEY `isian_jenisTes_foreign` (`jenisTes`);
 
 --
+-- Indeks untuk tabel `jawaban`
+--
+ALTER TABLE `jawaban`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jawaban_userId_foreign` (`userId`),
+  ADD KEY `jawaban_jenisTes_foreign` (`jenisTes`);
+
+--
 -- Indeks untuk tabel `jenistes`
 --
 ALTER TABLE `jenistes`
@@ -563,6 +670,13 @@ ALTER TABLE `pendidikannonformal`
 ALTER TABLE `pengalamankerja`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pengalamankerja_userId_foreign` (`userId`);
+
+--
+-- Indeks untuk tabel `pertanyaanessay`
+--
+ALTER TABLE `pertanyaanessay`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pertanyaanessay_jenisTes_foreign` (`jenisTes`);
 
 --
 -- Indeks untuk tabel `tahap_i_a`
@@ -606,7 +720,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -630,7 +744,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT untuk tabel `datakeluarga`
 --
 ALTER TABLE `datakeluarga`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `isian`
@@ -639,22 +753,28 @@ ALTER TABLE `isian`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `jawaban`
+--
+ALTER TABLE `jawaban`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
+
+--
 -- AUTO_INCREMENT untuk tabel `jenistes`
 --
 ALTER TABLE `jenistes`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendidikanformal`
 --
 ALTER TABLE `pendidikanformal`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendidikannonformal`
@@ -666,13 +786,19 @@ ALTER TABLE `pendidikannonformal`
 -- AUTO_INCREMENT untuk tabel `pengalamankerja`
 --
 ALTER TABLE `pengalamankerja`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT untuk tabel `pertanyaanessay`
+--
+ALTER TABLE `pertanyaanessay`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahap_i_a`
 --
 ALTER TABLE `tahap_i_a`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `ujianpilihanberganda`
@@ -730,6 +856,13 @@ ALTER TABLE `isian`
   ADD CONSTRAINT `isian_jenisTes_foreign` FOREIGN KEY (`jenisTes`) REFERENCES `jenistes` (`id`) ON DELETE CASCADE;
 
 --
+-- Ketidakleluasaan untuk tabel `jawaban`
+--
+ALTER TABLE `jawaban`
+  ADD CONSTRAINT `jawaban_jenisTes_foreign` FOREIGN KEY (`jenisTes`) REFERENCES `jenistes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `jawaban_userId_foreign` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
 -- Ketidakleluasaan untuk tabel `pendidikanformal`
 --
 ALTER TABLE `pendidikanformal`
@@ -746,6 +879,12 @@ ALTER TABLE `pendidikannonformal`
 --
 ALTER TABLE `pengalamankerja`
   ADD CONSTRAINT `pengalamankerja_userId_foreign` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `pertanyaanessay`
+--
+ALTER TABLE `pertanyaanessay`
+  ADD CONSTRAINT `pertanyaanessay_jenisTes_foreign` FOREIGN KEY (`jenisTes`) REFERENCES `jenistes` (`id`) ON DELETE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tahap_i_a`
