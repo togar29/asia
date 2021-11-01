@@ -35,13 +35,14 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">List Test:</h6>
+            <h6 class="collapse-header">Test Tahap 1</h6>
             <a class="collapse-item" href="/ujian/tahap1a">Tahap 1 Bagian A</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-b">Tahap 1 Bagian B</a>
-            <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-c">Tahap 1 Bagian c</a>
+            <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-c">Tahap 1 Bagian C</a>
             <a class="collapse-item" href="/ujian/tespenalaranlogis">Tes Penalaran Logis</a>
-            <a class="collapse-item" href="/ujian/tespenalarananalitis">Tes Penalaran Analitis</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-f">Tahap 1 Bagian F</a>
+            <h6 class="collapse-header">Test Tahap 2</h6>
+            <a class="collapse-item" href="/ujian/tespenalarananalitis">Tes Penalaran Analitis</a>
 
           </div>
         </div>

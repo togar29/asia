@@ -1,4 +1,4 @@
-<?= $this->extend('tamplate/index'); ?>
+<?= $this->extend('tamplatepelamar/index'); ?>
 
 <style>
   .box {

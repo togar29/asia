@@ -1,4 +1,4 @@
-<?= $this->extend('tamplate/index'); ?>
+<?= $this->extend('tamplatepelamar/index'); ?>
 
 
 <?= $this->section('page-content'); ?>

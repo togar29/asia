@@ -1,4 +1,4 @@
-<?= $this->extend('tamplate/index'); ?>
+<?= $this->extend('tamplatepelamar/index'); ?>
 
 <style>
   .box {
@@ -35,12 +35,13 @@
 
             foreach ($pertanyaanessay as $k) :
             ?>
-              <div class="col-7 offset-2">
+              <div class="col">
                 <div class="input-group mb-2">
-                  <div class="input-group-prepend mx-6">
+                  <div class="col-3">
                     <div class="input-group-text"><?= $k['pertanyaan']; ?></div>
                   </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroup" name="jawaban<?= $i; ?>" placeholder="Kata-kata">
+                  <div class="col-1">==></div>
+                  <input type="text" class="form-control col-7" id="inlineFormInputGroup" name="jawaban<?= $i; ?>" placeholder="Kata-kata">
                   <input type="text" style="display: none;" name="kunci<?= $i; ?>" class="form-control" id="inlineFormInputGroup" value="<?= terbilang((int)$k['pertanyaan']); ?>" placeholder="Kata-kata">
 
                 </div>
@@ -54,8 +55,8 @@
 
             <input type="text" style="display: none;" name="jumlahsoal" class="form-control" id="inlineFormInputGroup" value="<?= $i; ?>" placeholder="Kata-kata">
             <div class="form-group row">
-              <div class="offset-5 col-8">
-                <button name="submit" type="submit" class="btn btn-primary">next</button>
+              <div class="offset-10 ">
+                <button name="submit" type="submit" class="btn btn-primary col">next</button>
               </div>
             </div>
             <hr>
