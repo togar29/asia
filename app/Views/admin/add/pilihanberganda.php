@@ -25,15 +25,10 @@
             <div class="form-group row">
               <label for="jenistes" class="col-4 col-form-label">Jenis tes</label>
               <div class="col-8">
-                <select name="jenistes" id="jenistes" class="form-control" value="<?= old('jenistes') ?>">
-                  <?php
-                  foreach ($jenistes as $k) : ?>
-                    <option value="<?= $k['id']; ?>"><?= $k['jenisTes']; ?></option>
-                  <?php endforeach; ?>
-
-                </select>
+                <input class="form-control" name="jenistes" readonly=true value="<?= $jenistes['jenisTes']; ?>" type="text">
               </div>
             </div>
+
             <input id="page" style="display: none;" name="page" class="form-control here" type="text" value="jenistes">
             <div class="form-group row">
               <label for="soal" class="col-4 col-form-label">Soal</label>

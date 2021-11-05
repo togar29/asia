@@ -41,6 +41,7 @@
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-c">Tahap 1 Bagian C</a>
             <a class="collapse-item" href="/ujian/tespenalaranlogis">Tes Penalaran Logis</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-f">Tahap 1 Bagian F</a>
+            <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-g">Tahap 1 Bagian G</a>
             <h6 class="collapse-header">Test Tahap 2</h6>
             <a class="collapse-item" href="/ujian/tespenalarananalitis">Tes Penalaran Analitis</a>
 

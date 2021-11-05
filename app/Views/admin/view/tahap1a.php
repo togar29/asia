@@ -6,31 +6,72 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-  <div class="card shadow mb-4">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-12">
-          <h4>Tambah Soal</h4>
-          <hr>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Isi Data Profil-->
 
-        <div class="col-md-12">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Tahap 1 Bagian A</h6>
+    </div>
+    <div class="card-body">
+      <div class="row py-2">
+
+        <a href="#" class="col-12 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Nilai A</th>
+              <th>Nilai B</th>
+              <th>Kunci</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $i = 0;
+            foreach ($kecocokan as $k) : ?>
+              <tr>
+                <td><?= $k['nilaiA']; ?></td>
+                <td><?= $k['nilaiB']; ?></td>
+                <td><?= $k['kunci']; ?></td>
+                <td>
+                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
+                  <a href="" id="delete<?= $i; ?>" class="btn btn-danger">Hapus</a>
+                </td>
+              </tr>
+              <?php $i++; ?>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modals Untuk Tambah data -->
+  <div class="modal fade" id="modalSaya" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSayaLabel">Tambah Soal Tahp 1 Bagian A</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
           <form action="saveteskecocokan" method="POST">
+            <?= csrf_field(); ?>
             <div class="table-responsif">
               <div class="form-group row">
-                <label for="soal" class="col-4 col-form-label">Jumlah Soal</label>
-                <div class="col-3 offset-3">
+                <div class="col-3 offset-6">
                   <input type="number" class="form-control" id="jumlahsoal" name="jumlahsoal" placeholder="Jumlah soal">
                 </div>
-                <br>
-                <div class="col-2">
+                <div class="col-3">
                   <a href="#" class="btn btn-success" onclick="jumlahsoal().doNotSubmit()" id="btnjumlahsoal">Tambah Jumlah</a>
                 </div>
               </div>
+              <small id="tampil" class="form-text text-muted">Kunci jawaban akan otomatis terisi oleh aplikasi</small>
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
@@ -48,20 +89,22 @@
                 </tbody>
               </table>
             </div>
-            <div class="form-group row">
-              <div class="offset-11 col-8">
-                <button name="submit" type="submit" class="btn btn-primary">Simpan</button>
-              </div>
-            </div>
-          </form>
 
         </div>
+        <div class="modal-footer">
+          <button name="submit" type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
       </div>
-
     </div>
   </div>
 
+
+
+
+
 </div>
+
 
 <script>
   function jumlahsoal() {

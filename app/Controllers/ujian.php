@@ -77,8 +77,15 @@ class ujian extends BaseController
 		if (strcmp($slug, 'tahap-1-bagian-f') == 0) {
 			return view('ujian/add/tahap1f', $data);
 		}
+		if (strcmp($slug, 'tahap-1-bagian-g') == 0) {
+			return view('ujian/add/tahap1g', $data);
+		}
 	}
 
+
+
+
+	//saveeeeee
 	public function savepilgani($slug)
 	{
 		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();

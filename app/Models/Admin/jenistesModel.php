@@ -8,5 +8,5 @@ class jenistesModel extends Model
 {
   protected $table  = 'jenistes';
   protected $useTimestamp = true;
-  protected $allowedFields = ['jenisTes', 'keterangan'];
+  protected $allowedFields = ['jenisTes', 'keterangan', 'slug'];
 }

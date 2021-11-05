@@ -22,13 +22,20 @@ class Admin extends BaseController
 		$this->url = current_url();
 	}
 
-
-	public function jenistes()
+	public function index()
 	{
 		$data = [
-			'title' => 'Jenis Tes',
+			'title' => 'Beranda'
 		];
-		return view('admin/add/jenistes', $data);
+		return view('admin/index', $data);
+	}
+
+	public function listlowongan()
+	{
+		$data = [
+			'title' => 'Daftar Lowongan Kerja',
+		];
+		return view('admin/add/listlowongan', $data);
 	}
 	public function jenistesview()
 	{
@@ -41,23 +48,59 @@ class Admin extends BaseController
 		];
 		return view('admin/view/jenistes', $data);
 	}
-	public function pilihanberganda()
+	public function pilihanbergandaview($slug)
 	{
-		$jenistess = $this->jenistesModel->orderBy('id', 'asc')->findAll();
+		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();
+		$pilgan = $this->pilganModel->where(['jenisTes' => $jenistess['id']])->findAll();
 		$data = [
 			'title' => 'Tambah Soal Pilihan Berganda',
 			'jenistes' => $jenistess,
+			'pilgan' => $pilgan,
+			'slug' => $slug
 		];
-		return view('admin/add/pilihanberganda', $data);
+		return view('admin/view/pilihanberganda', $data);
 	}
-	public function teskecocokanobjek()
+	public function tahap1aview()
 	{
-		$jenistess = $this->jenistesModel->orderBy('id', 'asc')->findAll();
+		$kecocokan = $this->teskecocokanModel->findAll();
 		$data = [
-			'title' => 'Tahap 1 Bagian A',
-			'jenistes' => $jenistess,
+			'title' => 'Tahap 1 A',
+			'kecocokan' => $kecocokan
 		];
-		return view('admin/add/teskecocokanobjek', $data);
+		return view('admin/view/tahap1a', $data);
+	}
+	public function tahap1b()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-1-bagian-b'])->first();
+		$soal = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$data = [
+			'title' => 'Tahap 1 Bagian B',
+			'jenistes' => $jenistess,
+			'soal' => $soal
+		];
+		return view('admin/view/tahap1b', $data);
+	}
+	public function tahap1c()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-1-bagian-c'])->first();
+		$soal = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$data = [
+			'title' => 'Tahap 1 Bagian C',
+			'jenistes' => $jenistess,
+			'soal' => $soal
+		];
+		return view('admin/view/tahap1c', $data);
+	}
+	public function tahap1f()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-1-bagian-f'])->first();
+		$soal = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$data = [
+			'title' => 'Tahap 1 Bagian F',
+			'jenistes' => $jenistess,
+			'soal' => $soal
+		];
+		return view('admin/view/tahap1f', $data);
 	}
 	public function pertanyaan()
 	{
@@ -75,6 +118,7 @@ class Admin extends BaseController
 	{
 		$slug = url_title($this->request->getVar('jenisTes'), '-', true);
 		$this->jenistesModel->save([
+
 			'jenisTes' => $this->request->getVar('jenisTes'),
 			'keterangan' => $this->request->getVar('keterangan'),
 			'slug' => $slug,
@@ -136,6 +180,6 @@ class Admin extends BaseController
 
 			]);
 		}
-		return redirect()->to('/');
+		return redirect()->to('/admin/tahap1aview');
 	}
 }
