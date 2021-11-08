@@ -35,8 +35,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tahap 1</h6>
             <a class="collapse-item" href="/admin/jenistesview">Jenis Tes</a>
+            <h6 class="collapse-header">Tahap 1</h6>
             <a class="collapse-item" href="/admin/tahap1aview">Tahap 1 Bagian A</a>
             <a class="collapse-item" href="/admin/tahapessay/tahap-1-bagian-b">Tahap 1 Bagian B</a>
             <a class="collapse-item" href="/admin/tahapessay/tahap-1-bagian-c">Tahap 1 Bagian C</a>
@@ -61,7 +61,7 @@
 
       <!-- Nav Item - Hasil Akhir -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="/admin/hasilakhir">
           <i class="fas fa-fw fa-table"></i>
           <span>Hasil Akhir</span></a>
       </li>

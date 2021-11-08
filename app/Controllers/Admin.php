@@ -41,6 +41,15 @@ class Admin extends BaseController
 		];
 		return view('admin/view/listlowongan', $data);
 	}
+	public function hasilakhir()
+	{
+		$listlowongan = $this->listlowonganModel->findAll();
+		$data = [
+			'title' => 'Daftar Lowongan Kerja',
+			'listlowongan' => $listlowongan
+		];
+		return view('admin/view/hasilakhir', $data);
+	}
 	public function jenistesview()
 	{
 
