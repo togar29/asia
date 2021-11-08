@@ -9,7 +9,7 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Data Keluarga</h6>
+      <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
     </div>
     <div class="card-body">
       <div class="row py-2">
@@ -44,15 +44,18 @@
                 <td><?= $k['e']; ?></td>
                 <td><?= $k['kunci']; ?></td>
                 <td>
-                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary" onmouseover="mouseOveredit('edit<?= $i; ?>')"></a>
-                  <br>
-                  <a href="" id="delete<?= $i; ?>" class="btn btn-danger" onmouseover="mouseOverdelete('delete<?= $i; ?>')"></a>
+                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
+                  <br><br>
+                  <a href="" id="delete<?= $i; ?>" class="btn btn-danger"> Delete</a>
                 </td>
               </tr>
               <?php $i++; ?>
             <?php endforeach; ?>
           </tbody>
         </table>
+      </div>
+      <div class="row py-2">
+        <a href="#" class="col-12 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
       </div>
     </div>
   </div>
@@ -65,7 +68,7 @@
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalSayaLabel">Tambah Soal Tahp 1 Bagian A</h5>
+        <h5 class="modal-title" id="modalSayaLabel"><?= $jenistes['jenisTes']; ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -77,7 +80,9 @@
           <div class="form-group row">
             <label for="jenistes" class="col-4 col-form-label">Jenis tes</label>
             <div class="col-8">
-              <input class="form-control" name="jenistes" readonly=true value="<?= $jenistes['jenisTes']; ?>" type="text">
+              <input class="form-control" name="namate" readonly=true value="<?= $jenistes['jenisTes']; ?>" type="text">
+              <input class="form-control" style="display: none;" name="jenistes" readonly=true value="<?= $jenistes['id']; ?>" type="text">
+              <input class="form-control" style="display: none;" name="slug" readonly=true value="<?= $slug; ?>" type="text">
             </div>
           </div>
 

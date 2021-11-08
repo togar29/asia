@@ -6,12 +6,14 @@ use App\Models\Admin\jenistesModel;
 use App\Models\Admin\pilganModel;
 use App\Models\Admin\pertanyaanessayModel;
 use App\Models\Admin\teskecocokanModel;
+use App\Models\Admin\listlowonganModel;
 
 class Admin extends BaseController
 {
 	protected $jenistesModel;
 	protected $pertanyaanessayModel;
 	protected $url;
+	protected $listlowonganModel;
 
 	public function __construct()
 	{
@@ -19,7 +21,7 @@ class Admin extends BaseController
 		$this->pilganModel = new pilganModel();
 		$this->pertanyaanessayModel = new pertanyaanessayModel();
 		$this->teskecocokanModel = new teskecocokanModel();
-		$this->url = current_url();
+		$this->listlowonganModel = new listlowonganModel();
 	}
 
 	public function index()
@@ -32,10 +34,12 @@ class Admin extends BaseController
 
 	public function listlowongan()
 	{
+		$listlowongan = $this->listlowonganModel->findAll();
 		$data = [
 			'title' => 'Daftar Lowongan Kerja',
+			'listlowongan' => $listlowongan
 		];
-		return view('admin/add/listlowongan', $data);
+		return view('admin/view/listlowongan', $data);
 	}
 	public function jenistesview()
 	{
@@ -53,7 +57,7 @@ class Admin extends BaseController
 		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();
 		$pilgan = $this->pilganModel->where(['jenisTes' => $jenistess['id']])->findAll();
 		$data = [
-			'title' => 'Tambah Soal Pilihan Berganda',
+			'title' => 'Soal Pilihan Berganda',
 			'jenistes' => $jenistess,
 			'pilgan' => $pilgan,
 			'slug' => $slug
@@ -102,6 +106,39 @@ class Admin extends BaseController
 		];
 		return view('admin/view/tahap1f', $data);
 	}
+	public function tahap1g()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-1-bagian-g'])->first();
+		$soal = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$data = [
+			'title' => 'Tahap 1 Bagian g',
+			'jenistes' => $jenistess,
+			'soal' => $soal
+		];
+		return view('admin/view/tahap1g', $data);
+	}
+	public function tahap2b()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'tahap-2-bagian-b'])->first();
+		$soal = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$data = [
+			'title' => 'Tahap 2 Bagian b',
+			'jenistes' => $jenistess,
+			'soal' => $soal
+		];
+		return view('admin/view/tahap2b', $data);
+	}
+	public function tahapessay($slug)
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();
+		$soal = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
+		$data = [
+			'title' => $jenistess['jenisTes'],
+			'jenistes' => $jenistess,
+			'soal' => $soal
+		];
+		return view('admin/view/tahapessay', $data);
+	}
 	public function pertanyaan()
 	{
 
@@ -127,6 +164,7 @@ class Admin extends BaseController
 	}
 	public function savepilihanberganda()
 	{
+		$slug = $this->request->getVar('slug');
 		$this->pilganModel->save([
 			'jenisTes' => $this->request->getVar('jenistes'),
 			'soal' => $this->request->getVar('soal'),
@@ -137,10 +175,12 @@ class Admin extends BaseController
 			'e' => $this->request->getVar('e'),
 			'kunci' => $this->request->getVar('kunci'),
 		]);
-		return redirect()->to('Admin/pilihanberganda');
+		return redirect()->to('Admin/pilihanbergandaview/' . $slug);
 	}
-	public function savepertanyaanessay($a)
+	public function savepertanyaanessay()
 	{
+
+		$slug = $this->request->getVar('slug');
 		$jenistesss = $this->request->getVar('jenistes');
 		$jumlahsoal = $this->request->getVar('jumlahsoal');
 		for ($i = 0; $i < $jumlahsoal; $i++) {
@@ -157,7 +197,7 @@ class Admin extends BaseController
 				]);
 			}
 		}
-		return redirect()->to('Admin/' . $a);
+		return redirect()->to('Admin/tahapessay/' . $slug);
 	}
 	public function saveteskecocokan()
 	{

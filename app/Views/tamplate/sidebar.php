@@ -14,7 +14,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/pelamar">
+        <a class="nav-link" href="/admin/listlowongan">
           <i class="far fa-address-card"></i>
           <span>List Lowongan </span></a>
       </li>
@@ -35,14 +35,18 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">List Test:</h6>
+            <h6 class="collapse-header">Tahap 1</h6>
             <a class="collapse-item" href="/admin/jenistesview">Jenis Tes</a>
             <a class="collapse-item" href="/admin/tahap1aview">Tahap 1 Bagian A</a>
-            <a class="collapse-item" href="/admin/tahap1b">Tahap 1 Bagian B</a>
-            <a class="collapse-item" href="/admin/tahap1c">Tahap 1 Bagian C</a>
+            <a class="collapse-item" href="/admin/tahapessay/tahap-1-bagian-b">Tahap 1 Bagian B</a>
+            <a class="collapse-item" href="/admin/tahapessay/tahap-1-bagian-c">Tahap 1 Bagian C</a>
             <a class="collapse-item" href="/admin/pilihanbergandaview/tes-penalaran-analisis">Tes Penalaran Analitis</a>
             <a class="collapse-item" href="/admin/pilihanbergandaview/tes-penalaran-logis">Tes Penalaran Logis</a>
-            <a class="collapse-item" href="/admin/tahap1c">Tahap 1 Bagian F</a>
+            <a class="collapse-item" href="/admin/tahap1f">Tahap 1 Bagian F</a>
+            <a class="collapse-item" href="/admin/tahap1g">Tahap 1 Bagian G</a>
+            <h6 class="collapse-header">Tahap 2</h6>
+            <a class="collapse-item" href="/admin/pilihanbergandaview/tahap-2-bagian-a">Tahap 2 Bagian A</a>
+            <a class="collapse-item" href="/admin/tahap2b">Tahap 2 Bagian B</a>
 
           </div>
         </div>

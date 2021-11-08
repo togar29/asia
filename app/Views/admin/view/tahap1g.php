@@ -9,29 +9,30 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Tahap 1 Bagian A</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Tahap 1 Bagian G</h6>
     </div>
     <div class="card-body">
       <div class="row py-2">
 
-        <a href="#" class="col-8 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
+        <a href="#" class="col-12 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
       </div>
+
 
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr class="text-center  d-flex">
               <th class="col-1">#</th>
-              <th class="col-4">Soal</th>
+              <th class="col-8">Soal</th>
               <th class="col-3">Action</th>
             </tr>
           </thead>
           <tbody>
             <?php $i = 0;
             foreach ($soal as $k) : ?>
-              <tr class="text-center  d-flex">
+              <tr class="text-left  d-flex">
                 <td class="col-1"><?= $i + 1; ?></td>
-                <td class="col-4"><?= $k['pertanyaan']; ?></td>
+                <td class="col-8"><?= $k['pertanyaan']; ?></td>
                 <td class="col-3">
                   <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
                   <a href="" id="delete<?= $i; ?>" class="btn btn-danger">Hapus</a>
@@ -41,6 +42,10 @@
             <?php endforeach; ?>
           </tbody>
         </table>
+      </div>
+      <div class="row py-2">
+
+        <a href="#" class="col-12 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
       </div>
     </div>
   </div>
@@ -63,7 +68,7 @@
             <div class="form-group row">
               <label for="jenistes" class="col-4 col-form-label">Jenis tes</label>
               <div class="col-6">
-                <input type="text" class="form-control" value="Tahap 1 Bagian B" readonly>
+                <input type="text" class="form-control" value="Tahap 1 Bagian G" readonly>
                 <input type="text" class="form-control" style="display: none;" id="jenistes" name="jenistes" value="<?= $jenistes['id']; ?>">
               </div>
               <div class="col-2">

@@ -8,33 +8,35 @@
 
 
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Tahap 1 Bagian A</h6>
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">List Lowongan Kerja</h6>
     </div>
     <div class="card-body">
-      <div class="row py-2">
+      <div class="row ">
 
-        <a href="#" class="col-12 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
+        <a href="#" class="col-12  btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
       </div>
 
-      <div class="table-responsive">
+      <div class="table-responsive ">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
-            <tr>
-              <th>Nilai A</th>
-              <th>Nilai B</th>
-              <th>Kunci</th>
-              <th>Action</th>
+            <tr class="text-center  d-flex">
+              <th class="col-1">#</th>
+              <th class="col-3">Nilai A</th>
+              <th class="col-3">Nilai B</th>
+              <th class="col-2">Kunci</th>
+              <th class="col-3">Action</th>
             </tr>
           </thead>
           <tbody>
             <?php $i = 0;
             foreach ($kecocokan as $k) : ?>
-              <tr>
-                <td><?= $k['nilaiA']; ?></td>
-                <td><?= $k['nilaiB']; ?></td>
-                <td><?= $k['kunci']; ?></td>
-                <td>
+              <tr class="text-left  d-flex">
+                <td class="col-1"><?= $i + 1; ?></td>
+                <td class="col-3"><?= $k['nilaiA']; ?></td>
+                <td class="col-3"><?= $k['nilaiB']; ?></td>
+                <td class="col-2"><?= $k['kunci']; ?></td>
+                <td class="col-3">
                   <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
                   <a href="" id="delete<?= $i; ?>" class="btn btn-danger">Hapus</a>
                 </td>
@@ -43,6 +45,9 @@
             <?php endforeach; ?>
           </tbody>
         </table>
+      </div>
+      <div class="row py-2">
+        <a href="#" class="col-12 btn btn-primary" data-toggle="modal" data-target="#modalSaya">Tambah Data</a>
       </div>
     </div>
   </div>
