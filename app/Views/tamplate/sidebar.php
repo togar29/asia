@@ -59,11 +59,20 @@
           <span>Interview</span></a>
       </li>
 
-      <!-- Nav Item - Hasil Akhir -->
+
+
       <li class="nav-item">
-        <a class="nav-link" href="/admin/hasilakhir">
+        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
           <i class="fas fa-fw fa-table"></i>
-          <span>Hasil Akhir</span></a>
+          <span>Hasil</span>
+        </a>
+        <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/admin/hasildata">Hasil Data</a>
+            <a class="collapse-item" href="/admin/hasiltes">Hasil Tes</a>
+            <a class="collapse-item" href="/admin/hasilakhir">Hasil Akhir</a>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->
