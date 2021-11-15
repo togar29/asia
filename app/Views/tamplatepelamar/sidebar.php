@@ -39,12 +39,13 @@
             <a class="collapse-item" href="/ujian/tahap1a">Tahap 1 Bagian A</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-b">Tahap 1 Bagian B</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-c">Tahap 1 Bagian C</a>
-            <a class="collapse-item" href="/ujian/tespenalaranlogis">Tes Penalaran Logis</a>
+            <a class="collapse-item" href="/ujian/pilgan/tes-penalaran-logis">Tes Penalaran Logis</a>
+            <a class="collapse-item" href="/ujian/pilgan/tes-penalaran-analisis">Tes Penalaran Analitis</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-f">Tahap 1 Bagian F</a>
             <a class="collapse-item" href="/ujian/tesessay/tahap-1-bagian-g">Tahap 1 Bagian G</a>
             <h6 class="collapse-header">Test Tahap 2</h6>
-            <a class="collapse-item" href="/ujian/tespenalarananalitis">Tes Penalaran Analitis</a>
-
+            <a class="collapse-item" href="/ujian/pilgan/tahap-2-bagian-a">Tahap 2 Bagian A</a>
+            <a class="collapse-item" href="/ujian/tesessay/tahap-2-bagian-b">Tahap 2 Bagian B</a>
           </div>
         </div>
       </li>

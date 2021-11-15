@@ -69,9 +69,6 @@
                 <input type="text" class="form-control" style="display: none;" id="jenistes" name="jenistes" value="<?= $jenistes['id']; ?>">
                 <input type="text" class="form-control" style="display: none;" id="slug" name="slug" value="<?= $jenistes['slug']; ?>">
               </div>
-              <div class="col-2">
-                <a href="jenistes" style="display: none;" class="btn btn-success" id="btntambah">Tambah Jenis Tes</a>
-              </div>
             </div>
 
 
@@ -118,6 +115,7 @@
 
 </div>
 
+
 <script type="text/javascript">
   function hideunhide() {
     var tombol = document.getElementById("form1").jenistes.value;
@@ -133,6 +131,8 @@
   function jumlahsoal() {
 
     var tombol = document.getElementById("form1").jenistes.value;
+    var dijalankan = 0;
+    var count = 0;
     var x = document.getElementById("jumlahsoal");
     var btnn = document.getElementById("btnjumlahsoal");
     var p = document.getElementById("here");
@@ -140,7 +140,6 @@
     if (x.value == 0) {
       alert("Jumlah Soal Masih Kosong")
     } else {
-
       for (let i = 0; i < x.value; i++) {
         var addelement = document.createElement('label');
         addelement.innerHTML = "Soal " + (i + 1);
@@ -159,7 +158,6 @@
         creatediv.appendChild(addelement1);
         count++;
       }
-
     }
     document.getElementById("soalcol").style.display = "block";
     document.getElementById("nomorcol").style.display = "block";
@@ -167,6 +165,7 @@
     btnn.style.display = 'none';
   }
 </script>
+
 
 
 <?= $this->endSection(); ?>

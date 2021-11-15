@@ -1,6 +1,10 @@
 <?= $this->extend('tamplatepelamar/index'); ?>
 
-
+<style>
+  .box {
+    padding: 5px 5px 5px 5px;
+  }
+</style>
 
 <?= $this->section('page-content'); ?>
 
@@ -10,10 +14,11 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-12">
-          <h4>Tes Penalaran Analitis (Waktu: 5 Menit)</h4>
+          <h4><?= $jenistes['jenisTes']; ?></h4>
           <hr>
         </div>
       </div>
+      <!-- Isi Data Profil-->
       <div class="table-responsive mt ">
         <?php
         $i = 0;
@@ -25,13 +30,15 @@
           $pilihan_d = $k["d"];
           $pilihan_e = $k["e"];
         ?>
-          <form action="savepilgani/tes-penalaran-analisis" method="POST">
+          <form action="savepilgani/<?= $slug; ?>" method="POST">
             <table>
               <tbody>
                 <div class="form-group row">
 
                   <tr>
-                    <td><?= $i + 1 . ". "  . $k['soal']; ?>.</td>
+                    <td>
+                      <p class="font-weight-bold"><?= $i + 1 . ". "  . $k['soal']; ?></p>
+                    </td>
                   </tr>
                 </div>
                 <tr>
@@ -63,13 +70,11 @@
                   </td>
                 </tr>
               </tbody>
-            </table <hr class="sidebar-divider">
+            </table>
+            <hr class="sidebar-divider">
             <?php $i++; ?>
 
           <?php endforeach; ?>
-          <?php
-
-          ?>
           <tr>
             <td height="40"></td>
             <td>

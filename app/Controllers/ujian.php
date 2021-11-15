@@ -41,24 +41,17 @@ class ujian extends BaseController
 		];
 		return view('ujian/add/tahap1essay', $data);
 	}
-	public function tespenalaranlogis()
+	public function pilgan($slug)
 	{
-		$pilgantahapi = $this->pilganModel->where(['jenisTes' => 1])->orderBy('id', 'asc')->findAll();
+		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();
+		$pilgantahapi = $this->pilganModel->where(['jenisTes' => $jenistess['id']])->orderBy('id', 'asc')->findAll();
 		$data = [
-			'title' => 'Pertanyaan',
-			'pilgantahapi' => $pilgantahapi
+			'title' => $jenistess['jenisTes'],
+			'pilgantahapi' => $pilgantahapi,
+			'jenistes' => $jenistess,
+			'slug' => $slug
 		];
-		return view('ujian/add/pilgantahapi', $data);
-	}
-	public function tespenalarananalitis()
-	{
-
-		$pilgantahapi = $this->pilganModel->where(['jenisTes' => 2])->orderBy('id', 'asc')->findAll();
-		$data = [
-			'title' => 'Pertanyaan',
-			'pilgantahapi' => $pilgantahapi
-		];
-		return view('ujian/add/pilgantahapii', $data);
+		return view('ujian/add/pilgan', $data);
 	}
 	public function tesessay($slug)
 	{
@@ -79,6 +72,9 @@ class ujian extends BaseController
 		}
 		if (strcmp($slug, 'tahap-1-bagian-g') == 0) {
 			return view('ujian/add/tahap1g', $data);
+		}
+		if (strcmp($slug, 'tahap-2-bagian-b') == 0) {
+			return view('ujian/add/tahap2b', $data);
 		}
 	}
 
@@ -108,8 +104,11 @@ class ujian extends BaseController
 			]);
 			$i++;
 		}
-
-		return redirect()->to('/');
+		if (strcmp($slug, "tes-penalaran-logis") == 0) {
+			return redirect()->to('/ujian/tespenalarananalitis');
+		} else if (strcmp($slug, "tes-penalaran-analisis") == 0) {
+			return redirect()->to('/ujian/tesessay/tahap-1-bagian-f');
+		}
 	}
 	public function savebagian1a()
 	{
@@ -137,6 +136,7 @@ class ujian extends BaseController
 			]);
 			$i++;
 		}
+		return redirect()->to('/ujian/tesessay/tahap-1-bagian-b');
 	}
 	public function savebagian1b()
 	{
@@ -164,6 +164,7 @@ class ujian extends BaseController
 			]);
 			$i++;
 		}
+		return redirect()->to('/ujian/tesessay/tahap-1-bagian-c');
 	}
 	public function savebagian1c()
 	{
@@ -191,6 +192,7 @@ class ujian extends BaseController
 			]);
 			$i++;
 		}
+		return redirect()->to('/ujian/tespenalaranlogis');
 	}
 	public function savebagian1f()
 	{
@@ -215,6 +217,27 @@ class ujian extends BaseController
 				'jawaban' => $jawaban,
 				'kunci' => $kunci,
 				'nilai' => $nilai
+			]);
+			$i++;
+		}
+		return redirect()->to('/ujian/tesessay/tahap-1-bagian-g');
+	}
+	public function savebagian2b()
+	{
+		$slug = $this->request->getVar('slug');
+		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();
+		$pertanyaan = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->orderBy('id', 'asc')->findAll();
+
+		$i = 0;
+		foreach ($pertanyaan as $k) {
+
+			$jawaban = $this->request->getVar('jawaban' . $i);
+			$kunci = $this->request->getVar('kunci' . $i);
+			$this->jawabanModel->save([
+				'userId' => user()->id,
+				'jenisTes' => $jenistess['id'],
+				'jawaban' => $jawaban,
+				'kunci' => $kunci,
 			]);
 			$i++;
 		}
