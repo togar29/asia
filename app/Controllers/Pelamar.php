@@ -57,37 +57,31 @@ class Pelamar extends BaseController
 		$keluarga = $this->keluargaModel->where(['userID' => user()->id])->findAll();
 		$data = [
 			'title' => 'Data Keluarga',
-			'keluarga' => $keluarga
+			'keluarga' => $keluarga,
+			'validation' => \Config\Services::validation()
 		];
 		return view('pelamar/view/datakeluargaview', $data);
 	}
-	public function datakeluargaadd()
-	{
-		session();
-		$data = [
-			'title' => 'Data Keluarga',
-			'validation' => \Config\Services::validation()
-		];
-		return view('pelamar/add/datakeluargaadd', $data);
-	}
+
 	public function pendidikanformalview()
 	{
 		$pendidikanformal = $this->pendidikanformalModel->where(['userID' => user()->id])->findAll();
 		$data = [
 			'title' => 'Pendidikan Formal',
-			'pendidikanformal' => $pendidikanformal
+			'pendidikanformal' => $pendidikanformal,
+			'validation' => \Config\Services::validation()
 		];
 		return view('pelamar/view/pendidikanformalview', $data);
 	}
 
-	public function pendidikanformaladd()
+	public function pendidikannonformalview()
 	{
 		$data = [
-			'title' => 'Pendidikan Formal',
+			'title' => 'Pendidikan Non-Formal',
 			'validation' => \Config\Services::validation(),
 
 		];
-		return view('pelamar/add/pendidikanformaladd', $data);
+		return view('pelamar/view/pendidikannonformalview ', $data);
 	}
 	public function pendidikannonformaladd()
 	{
@@ -102,7 +96,8 @@ class Pelamar extends BaseController
 		$pengalamankerja = $this->pengalamankerjaModel->where(['userID' => user()->id])->findAll();
 		$data = [
 			'title' => 'Pengalaman Kerja',
-			'pengalamankerja' => $pengalamankerja
+			'pengalamankerja' => $pengalamankerja,
+			'validation' => \Config\Services::validation()
 		];
 
 		return view('pelamar/view/pengalamankerjaview', $data);
@@ -116,18 +111,9 @@ class Pelamar extends BaseController
 		];
 		return view('pelamar/add/pengalamankerjaadd', $data);
 	}
-	public function pertanyaan()
-	{
-		$jenistess = $this->jenistesModel->where(['slug' => 'pertanyaan-profil'])->first();
-		$pertanyaanessay = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->findAll();
 
-		$data = [
-			'title' => 'Pertanyaan',
-			'pertanyaan' => $pertanyaanessay,
 
-		];
-		return view('pelamar/add/pertanyaanlain', $data);
-	}
+
 
 
 
@@ -143,13 +129,6 @@ class Pelamar extends BaseController
 					'required' => 'Nama harus diisi'
 				]
 			],
-			'nohp' => [
-				'rules' => 'required|numeric',
-				'errors' => [
-					'required' => 'Nomor Hp harus diisi',
-					'numeric' => 'Nomor Hp harus berupa angka'
-				]
-			],
 			'tanggungan' => [
 				'rules' => 'required',
 				'errors' => [
@@ -157,7 +136,7 @@ class Pelamar extends BaseController
 				]
 			]
 		])) {
-			return redirect()->to(('/pelamar/datakeluargaadd'))->withInput();
+			return redirect()->to(('/pelamar/datakeluargaview'))->withInput();
 		}
 		$this->keluargaModel->save([
 			'userId' => user()->id,
@@ -199,7 +178,7 @@ class Pelamar extends BaseController
 				]
 			]
 		])) {
-			return redirect()->to(('/pelamar/pengalamankerjaadd'))->withInput();
+			return redirect()->to(('/pelamar/pengalamankerjaview'))->withInput();
 		}
 		$mulai = date_create($this->request->getVar('daritahun'));
 		$akhir = date_create($this->request->getVar('sampaitahun'));

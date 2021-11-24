@@ -78,9 +78,34 @@
                   <!-- Card Content - Collapse -->
                   <div class="collapse show" id="assembling">
                     <div class="card-body">
-                      This is a collapsable card example using Bootstrap's built in collapse
-                      functionality. <strong>Click on the card header</strong> to see the card body
-                      collapse and expand!
+                      <table>
+                        <tr class=" " id="no1">
+                          <td colspan="3">
+                            <div class="">
+                              <div class="row">
+                                <div class="col-4">Umur</div>
+                                <div class="col-1">:</div>
+                                <div class="col-6">20 Tahun</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-4">Lulusan </div>
+                                <div class="col-1">:</div>
+                                <div class="col-6">SMK/SMA</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-4">Pengalaman Bekerja</div>
+                                <div class="col-1">:</div>
+                                <div class="col-6">Minimal 3 Tahun</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-4">Dll</div>
+                                <div class="col-1">:</div>
+                                <div class="col-6">Berpengalaman di bidang elektrikal/industri/bahan bangunan menjadi nilai tambah</div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
                   </div>
                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Okt 2021 pada 08.50
+-- Waktu pembuatan: 24 Nov 2021 pada 01.03
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -151,7 +151,24 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (45, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-28 19:03:56', 1),
 (46, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-29 07:26:16', 1),
 (47, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-30 21:04:02', 1),
-(48, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-31 01:47:16', 1);
+(48, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-10-31 01:47:16', 1),
+(49, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-01 09:19:20', 1),
+(50, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-04 08:13:13', 1),
+(51, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-05 08:38:26', 1),
+(52, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-07 00:12:58', 1),
+(53, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-07 08:51:52', 1),
+(54, '::1', 'betsye', NULL, '2021-11-08 07:19:36', 0),
+(55, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-08 07:20:14', 1),
+(56, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-08 11:59:06', 1),
+(57, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-10 06:34:14', 1),
+(58, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-11 08:20:26', 1),
+(59, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-13 08:13:45', 1),
+(60, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-14 00:09:57', 1),
+(61, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-14 04:34:21', 1),
+(62, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-21 01:06:15', 1),
+(63, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-21 01:06:16', 1),
+(64, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-21 06:09:54', 1),
+(65, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-23 06:30:28', 1);
 
 -- --------------------------------------------------------
 
@@ -236,16 +253,10 @@ CREATE TABLE `datakeluarga` (
 --
 
 INSERT INTO `datakeluarga` (`id`, `userId`, `hubungan`, `nama`, `alamat`, `nohp`, `pendidikan`, `pekerjaan`, `tanggungan`) VALUES
-(1, 3, 'Saudara', 'Immanuel Gultom', NULL, '26387126387126', 'asdasas', 'asdawqwe', 'tidak'),
-(2, 3, 'Istri', 'asa togarma gultom', 'Jl. Hm Yamin', '08976374265', 'SMA', 'Pejabat Korupsi', 'ya'),
-(3, 3, 'Anak', 'ELISDA LUBIS', 'res', '30977864543', '1223', '2321', 'ya'),
-(4, 3, 'Anak', 'Tungirna', 'ajskj', '23124', 'assdn', 'sodkf', 'tidak'),
-(5, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
-(6, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
-(7, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
-(8, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
-(9, 3, 'Istri', 'Immanuel Gultom', '123', '23127', 'asdasas', 'Pejabat Korupsi', 'tidak'),
-(10, 3, 'Anak', 'qweqw sdas', '12sdq', 'wdw', 'wedqwe', 'qwe', 'tidak');
+(11, 3, ' Ayah', 'Martambah Marbun', 'Jl Hm Yamin Gang Ind', '-', 'SMA', 'Petani', 'tidak'),
+(12, 3, 'Ibu', 'Tiaomin Tindaon', 'Langkat', '223126', 'SMA', 'Petani', 'tidak'),
+(13, 3, 'Saudara', 'Desi Natalia Marbun', 'GB Joshua', '083642723', 'SMK', 'Siswa', 'ya'),
+(14, 3, 'Istri', 'tungirnasdasg', 'sjldkaj', '9374827398', 'SMA', 'Marbao', 'ya');
 
 -- --------------------------------------------------------
 
@@ -275,6 +286,29 @@ CREATE TABLE `jawaban` (
   `nilai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data untuk tabel `jawaban`
+--
+
+INSERT INTO `jawaban` (`id`, `userId`, `jenisTes`, `jawaban`, `kunci`, `nilai`) VALUES
+(296, 3, 7, 'dua puluh satu ribu tiga ratus enam belas', 'dua puluh satu ribu tiga ratus enam belas', 1),
+(297, 3, 7, 'tiga juta lima ratus tujuh puluh enam ribu tiga ratus tujuh belas', 'tiga juta lima ratus tujuh puluh enam ribu tiga ratus tujuh belas', 1),
+(298, 3, 7, '', 'dua puluh delapan ribu tiga ratus dua belas', 0),
+(299, 3, 7, '', 'tiga ribu dua ratus dua belas', 0),
+(300, 3, 7, '', 'dua ribu tiga ratus dua belas', 0),
+(301, 3, 7, '', 'dua puluh tiga ribu tiga ratus dua puluh satu', 0),
+(302, 3, 7, '', 'dua ribu tiga ratus dua belas', 0),
+(303, 3, 7, '', 'seratus dua puluh tiga', 0),
+(304, 3, 7, '', 'dua puluh satu ribu dua ratus sebelas', 0),
+(305, 3, 7, '', 'delapan ribu tujuh ratus dua puluh enam', 0),
+(306, 3, 7, '', 'seratus dua puluh tiga ribu seratus dua puluh tiga', 0),
+(307, 3, 7, '', 'lima puluh tiga ribu dua ratus empat puluh dua', 0),
+(308, 3, 7, '', 'dua puluh tiga ribu seratus dua puluh tiga', 0),
+(309, 3, 7, '', 'enam ribu tiga ratus empat puluh dua', 0),
+(310, 3, 11, '70', NULL, 0),
+(311, 3, 11, '80', NULL, 0),
+(312, 3, 11, '54', NULL, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -293,15 +327,43 @@ CREATE TABLE `jenistes` (
 --
 
 INSERT INTO `jenistes` (`id`, `jenisTes`, `keterangan`, `slug`) VALUES
-(1, 'Tes Penalaran Logis', 'Tes Tahap 1', 'tes-penalaran-logis'),
-(2, 'Tes Penalaran Analisis', 'Tahap 2', 'tes-penalaran-analisis'),
-(6, 'Tahap 1 Bagian A', 'Berilah Tanda bagi y', 'tahap-1-bagian-a'),
-(7, 'Tahap 1 Bagian B', 'Tuliskan dalam bentu', 'tahap-1-bagian-b'),
-(8, 'Tahap 1 Bagian C', 'Tuliskan dalam bentu', 'tahap-1-bagian-c'),
+(1, 'Tes Penalaran Logis', 'Tes Tahap 1 bagian D', 'tes-penalaran-logis'),
+(2, 'Tes Penalaran Analisis', 'Tes Tahap 1 Bagian D', 'tes-penalaran-analisis'),
+(6, 'Tahap 1 Bagian A', 'Berilah Tanda bagi yang benar', 'tahap-1-bagian-a'),
+(7, 'Tahap 1 Bagian B', 'Tuliskan dalam bentuk kata-kata', 'tahap-1-bagian-b'),
+(8, 'Tahap 1 Bagian C', 'Tuliskan dalam bentuk angka', 'tahap-1-bagian-c'),
 (9, 'Tahap 1 Bagian F', 'Penjumlahan, Pengurangan, Perkalian dan Pembagian', 'tahap-1-bagian-f'),
 (10, 'Tahap 1 Bagian G', 'Tes Kepribadian', 'tahap-1-bagian-g'),
 (11, 'Tahap 2 Bagian B', 'Pertanyaan', 'tahap-2-bagian-b'),
-(12, 'Pertanyaan Profil', 'Kelengkapan Profil', 'pertanyaan-profil');
+(29, 'Tahap 2 Bagian A', 'Pilihan Berganda', 'tahap-2-bagian-a'),
+(30, 'Test Psikologi', 'Tahap 2', 'test-psikologi');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kriterialowongan`
+--
+
+CREATE TABLE `kriterialowongan` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `lowonganid` int(11) UNSIGNED NOT NULL,
+  `kriteria` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `listlowongan`
+--
+
+CREATE TABLE `listlowongan` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `namalowongan` varchar(255) DEFAULT NULL,
+  `devisi` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -333,7 +395,9 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (7, '2021-10-04-133707', 'App\\Database\\Migrations\\CreateTahap1A', 'default', 'App', 1633355095, 7),
 (8, '2021-10-04-235852', 'App\\Database\\Migrations\\CreateTest', 'default', 'App', 1633392201, 8),
 (9, '2021-10-07-132553', 'App\\Database\\Migrations\\Createpertanyaanprofil', 'default', 'App', 1633613577, 9),
-(10, '2021-10-07-133412', 'App\\Database\\Migrations\\Createjawaban', 'default', 'App', 1633613815, 10);
+(10, '2021-10-07-133412', 'App\\Database\\Migrations\\Createjawaban', 'default', 'App', 1633613815, 10),
+(11, '2021-11-07-083207', 'App\\Database\\Migrations\\Listlowongan', 'default', 'App', 1636274098, 11),
+(12, '2021-11-07-145820', 'App\\Database\\Migrations\\DetailLowongan', 'default', 'App', 1636297323, 12);
 
 -- --------------------------------------------------------
 
@@ -360,7 +424,8 @@ CREATE TABLE `pendidikanformal` (
 
 INSERT INTO `pendidikanformal` (`id`, `userId`, `tingkatan`, `namaInstitut`, `kota`, `jurusan`, `tahunMulai`, `tahunAkhir`, `keterangan`, `sertifikat`) VALUES
 (1, 1, 'SMA', 'SMAN1 Medan', 'Medan', 'IPA', '0000-00-00', '0000-00-00', NULL, NULL),
-(4, 3, 'SD', 'SDN 12312 Tj Mangeda', 'Tj Mangedar', '-', '2021-10-13', '2021-10-22', '-', 'betsyebamarbunSD_1.j');
+(4, 3, 'SD', 'SDN 12312 Tj Mangeda', 'Tj Mangedar', '-', '2021-10-13', '2021-10-22', '-', 'betsyebamarbunSD_1.j'),
+(5, 3, 'SMP', 'SMP N 2 Medan', 'Medan', '-', '2021-11-09', '2021-11-18', '-', 'betsyebamarbunSMP.jp');
 
 -- --------------------------------------------------------
 
@@ -427,9 +492,53 @@ CREATE TABLE `pertanyaanessay` (
 --
 
 INSERT INTO `pertanyaanessay` (`id`, `jenisTes`, `pertanyaan`, `kunci`) VALUES
-(72, 9, '9 x 0 + 25 + 75 - 40', '60'),
-(73, 9, '9 x 0 + 25 + 75 - 40', '60'),
-(74, 9, '8 x 0 + 25 + 75 - 40', '60');
+(103, 7, '600', ''),
+(104, 7, '1001', ''),
+(105, 7, '2506', ''),
+(106, 7, '1036', ''),
+(107, 7, '10000', ''),
+(108, 7, '450500', ''),
+(109, 7, '60001', ''),
+(110, 7, '98750', ''),
+(111, 7, '12501', ''),
+(112, 7, '7505', ''),
+(113, 8, 'seribu dua ratus enam puluh tujuh', ''),
+(114, 8, 'enam ratus tiga', ''),
+(115, 8, 'seribu lima ratus enam', ''),
+(116, 8, 'tiga ribu enam ratus tujuh puluh empat', ''),
+(117, 8, 'satu juta enam ratus', ''),
+(118, 8, 'enam ribu enam puluh ', ''),
+(119, 8, 'dua puluh tiga juta seratus lima', ''),
+(120, 8, 'tiga puluh ribu enam ratus', ''),
+(121, 8, 'empat ratus lima puluh ribu', ''),
+(122, 8, 'seratus satu ribu', ''),
+(123, 11, 'Jika anda bekerja dengan rekan kerja lainnya, seberapa besar anda percaya bahwa rekan anda bekerja dengan baik?', ''),
+(124, 11, 'Seberapa besar anda menghargai rekan-rekan kerja anda dalam perusahaan?', ''),
+(125, 11, 'Seberapa besar anda peduli dengan kesulitan yang dihadapi rekan dalam tim kerja anda?', ''),
+(126, 9, '9 x 0 + 25 +75 - 40', '60'),
+(127, 9, '6 x 7 : 6 + 17 + 20', '44'),
+(128, 9, '8 x 9 : 9 + 8 + 4 - 2', '18'),
+(129, 9, '0.25 + 0.01 - 0.12 x 1.1', '0.128'),
+(130, 9, '4 x 25 : 5 + 30 - 10', '40'),
+(131, 9, '6 x 5 x 3 - 20 - 5', '65'),
+(132, 9, '(7 + 17 + 6 - 5) : 25', '1'),
+(133, 9, '0.78 - 0.03 + 2.51', '3.26'),
+(134, 9, '(4 x 8 + 8 + 5) : 15', '3'),
+(135, 9, '(3 x 20 x 20 - 10) : 10', '7'),
+(146, 10, 'Saya iri kalau oran yang tidak pandai dari saya menjadi lebih berhasil dari saya', ''),
+(147, 10, 'sangat penting bagi saya supaya orang lain menghargai keberhasilan saya', ''),
+(148, 10, 'Saya suka melihat acara telebisi, walaupun tidak menarik, jika ada manfaat bagi saya', ''),
+(149, 10, 'Saya berusaha mengembangkan bakat-bakat yang lemah melalui latihan', ''),
+(150, 10, 'saya selalu menentukan sendiri sasaran yang akan saya capai', ''),
+(151, 10, 'saya merasa memecahkan masalah yang suliit sangan menantang', ''),
+(152, 10, 'saya sering bekerja dalam waktu sengang saya', ''),
+(153, 10, 'saya ingin mengetahui cara untuk memperbaiki hasil yang saya capai', ''),
+(154, 10, 'di sekolah saya tak pernah puas dengan hasil yang saya capai', ''),
+(155, 10, 'saya bukan seseorang yang dapat menerima kekalahan', ''),
+(156, 10, 'coba coab', ''),
+(157, 11, 'Seberapa baik anda mengakomodasi cara-cara penyelesaian tugas yang diinginkan oleh mayoritas anggota tim?', ''),
+(158, 11, 'Seberapa baik anda mengikuti jadwal kerja yang telah menjadi kesepakatan tim?', ''),
+(159, 11, 'Seberapa baik anda berkmunikasi denan rekan kerja lainnya untuk kelancara tugas tim?', '');
 
 -- --------------------------------------------------------
 
@@ -450,15 +559,36 @@ CREATE TABLE `tahap_i_a` (
 --
 
 INSERT INTO `tahap_i_a` (`id`, `jenisTes`, `nilaiA`, `nilaiB`, `kunci`) VALUES
-(41, 6, '1234', '1234', 'benar'),
-(42, 6, '3212', '3123', 'salah'),
-(43, 6, '4325', '4325', 'benar'),
-(44, 6, '7831', '7831', 'benar'),
-(45, 6, 'asdvbna', 'asgfdha', 'salah'),
-(46, 6, 'toera', 'toera', 'benar'),
-(47, 6, '415271', '451271', 'salah'),
-(48, 6, '2363517', '12531625', 'salah'),
-(49, 6, '2716', '2716', 'benar');
+(54, 6, '123456', '124356', 'salah'),
+(55, 6, '200', '200', 'benar'),
+(56, 6, '305', '315', 'salah'),
+(57, 6, '4008', '4080', 'salah'),
+(58, 6, '11101', '1101', 'salah'),
+(59, 6, '3575', '3575', 'benar'),
+(60, 6, '505', '515', 'salah'),
+(61, 6, '424', '442', 'salah'),
+(62, 6, '7895', '79852', 'salah'),
+(63, 6, '250', '250', 'benar'),
+(64, 6, '11110', '11111', 'salah'),
+(65, 6, '1000000', '100000', 'salah'),
+(66, 6, '999853', '99853', 'salah'),
+(67, 6, '2504', '2045', 'salah'),
+(68, 6, '17785', '17758', 'salah'),
+(69, 6, '5000', '5000', 'benar'),
+(70, 6, '2398', '2398', 'benar'),
+(71, 6, '78690', '78690', 'benar'),
+(72, 6, '369852', '369825', 'salah'),
+(73, 6, '456987', '456987', 'benar'),
+(74, 6, '137852', '14582', 'salah'),
+(75, 6, '45003', '45003', 'benar'),
+(76, 6, '56230', '56203', 'salah'),
+(77, 6, '45689', '8954', 'salah'),
+(78, 6, '77777', '77717', 'salah'),
+(79, 6, '12345', '12245', 'salah'),
+(80, 6, '21282', '21382', 'salah'),
+(81, 6, '8353', '8535', 'salah'),
+(82, 6, '9090', '9090', 'benar'),
+(83, 6, '56347', '56341', 'salah');
 
 -- --------------------------------------------------------
 
@@ -483,26 +613,29 @@ CREATE TABLE `ujianpilihanberganda` (
 --
 
 INSERT INTO `ujianpilihanberganda` (`id`, `jenisTes`, `soal`, `a`, `b`, `c`, `d`, `e`, `kunci`) VALUES
-(5, 1, 'Tidak semua guru hidup sejahtera. Semua artis hidup berkecukupan.', 'Sebagian guru dan artis hidup berkecukupan', 'Gaji guru kecil, sementara honor artis besar', 'Sebagian artis hidup seperti sebagian guru', 'Sebagian guru gajinya besar, sementara semua artis pnghasilannya besar', 'Semua artis dann guru hidup berkecukupan', 'a'),
-(6, 1, 'Bendera Indonesia berwarna merah-putih. Bendera belanda ditambah dengan warna biru.', 'Warna bendera Indonesia dan Belanda serupa tapi tak sama', 'Warna bendera Indonesia  dan Belanda mirip-mirip', 'Warna bendera Indonesia bisa ditemukan dari bendera Belanda dengan cara merobek warna birunya', 'Warna bendera Belanda lebih bagus daripada warna bendera Indonesia', 'Warna bendera Indonesia lebih sederhana dari warna bendera Belanda', 'a'),
-(7, 1, 'Pk Eko suplier kertas PT. Margono adalah distributor kertas ternama. Pembayaran di Pak Eko bisa mndur, sementara di PT Margono harus cash', 'Harga kertas Pak Eko lebih mahal daripada PT. Margono', 'Harga kertas Pak Eko lebih mahal karena bisa dibayar mundur', 'Harga kertas PT Margono lebih murah karena dibayar cash', 'walaupun dibayar mundur, Pak Eko tetap memiliki banyak cash flow untuk beli cash di PT Margono sehingga tetap bisa menuplai kertas ke semua relasinya', 'baik Pak Eko dan PT Margono sama saja dalam segala hal', 'a'),
-(8, 1, 'Rumahku di Billa Taman Bunga berlantai dua. Hotel Sahid Raya berlantai tujuh.', 'Rumahku dan hotel sama enaknya', 'Rumahku menampun lebih sedikit orang daripada hotel sehinga lebih nyaman', 'Harga rumahku dan hotel sama mahalnya', 'Rumahku tak membutuhkan room boy karena hanya berlantai dua, sementara hotel Sahid Raya memiliki banyak room boy untuk merawat bangunannya', 'Rumahku dan hotel sama saja fungsinya', 'a'),
-(9, 1, 'Semua elang adalah pemakan daging. Sebagian binatang adalah Elang.', 'Semua pemakan daging adalah elang', 'Sebagian elang pemakan daging', 'Sebagian binatang adalah pemakan daging', 'Sebagian elang tidak makan daging', 'Semua binatang pemakan daging', 'a'),
-(10, 1, 'Semua Kepala Sekolah adalah sarjana. Sementara Kepala Sekolah adalah guru', 'Sementara guru adalah sarjana', 'Sementara sarjana adalah Kepala Sekolah', 'Sementara guru adalah Kepala Sekolah', 'Semua guru adalah sarjana', 'Semua tidak benar', 'a'),
-(11, 1, 'Semua anjing suka makan tulang. Sapi tidak makan daging', 'Anjing tidak makan daging', 'Sapi memakan tulang', 'Anjing dan sapi tidak memakan tulang dan tidak makan daging', 'Anjing sama dengan sapi', 'Semua pernyataan salah', 'a'),
-(12, 1, 'Semua jenis burung bisa terbang. Semua ayam memili sayap.', 'Semua burung memiliki sayap', 'Semua ayam bisa terbang', 'Sementara ayam bisa terbang', 'Semua ayam termasuk jenis burung', 'Semua ayam bukan termasuk jenis burung', 'a'),
-(13, 1, 'Semua Penulis harus kreatif. Sementara novelis tidak kreatif. Semua kambing adalah pemakan rumput. Sebagian binantang adalah kambing, Makan:', 'Sementara novelis bukan penulis', 'Tidak ada penulis yang Novelis', 'Sementara orang yang kreatif bukan penulis', 'Sementara novelis kreatif ', 'Semua novelis Kreatif', 'a'),
-(14, 1, 'Semua orang yang bertitel MBA hidup dengan makmur. Sebagian orang yang bertitel MBA melakukan usaha wiraswasta.', 'Semua wiraswastawan bertitel MBA', 'Semua wiraswasta hidup makmur', 'Semua wiraswastawan yang hidupnya makmur bertitel MBA', 'Semua MBA yang berwiraswasta  hidup dengan makmur', 'Salah semua', 'a'),
-(15, 2, 'Umur Tika sepuluh tahun, setengah dari umur Fina dan tiga tahun lebih muda dari Nurul. Siapakah yang paling tua', 'Tika', 'Dina', 'Nurul', 'Tika dan Dina', 'Nurul dan Tika', 'a'),
-(16, 2, 'Reno adiknya Reni. Ronu kakanya Reno dan usianya lebih tua daripada Reni, Siapakah yang usianya paling tua', 'Reno', 'Roni', 'Reni', 'Romi', 'Remi', 'a'),
-(17, 2, 'Produksi kelapa sawit kita tahun ini merosot, tetapi kualitasnya lebih baik.', 'Kualitas kelapa sawait tahun terdahulu kurang baik', 'Kelapa sawit kita pasti laku dipasaran', 'Kita tidak menderita kerugian', 'Ada yang besar dalam produksi kelapa sawit', 'Smuanya salah', 'a'),
-(18, 2, 'Jika B lewat C harus tambah D. Sebagian B tak punya D jadi:', 'Tidak punya D', 'semua B lewat C', 'Semua C tak punya D', 'Sebagian B tak punya A', 'Sebagian B tidak lewat C', 'a'),
-(19, 2, 'Bila A>B: Q>C; R>D, sefangkan A>Q>R dan B>C>D maka', 'R>B; Q>B', 'D<A; C>R; B>Q', 'D<A; C<R; B<Q', 'A>C>D; D<Q<A', 'Salah semua', 'a'),
-(20, 2, 'Lina, Lita dan Vita senang tennis. Rika dan Rifa tidak suka tennis. Lita dan Rika memakai topi. Siapakah yang topinya jatuh ketika bermain tennis', 'Lina', 'Lita', 'Vita ', 'Rika', 'Semuanya Salah', 'a'),
-(21, 2, 'Kalau ada tamu, Katakan saja bahwa saya akan kemabli pukul tifa, kecuali ada urusan penting yang mendadak', 'Klau saya kembali pukul tiga, pasti ada tamu', 'Akan ada tamu, tetapi saya tidak dapat menemuinya', 'Kalau jam tiga saya belum kembali, tamu tidak usah menunggu', 'Kalau ada urusan penting yang mendadak, saya akan kembali pukul tiga', 'Semua benar', 'a'),
-(22, 2, 'Setelah tiga tahun bisa hidup menjanda, Susan menikah lagi. Akan tetapi perkawinannya yang kedua tidak lebih berhasil dari yang pertama.', 'Suaminya yang kedua juga meningal', 'Suaminya yang pertama meninggal', 'Perkawinannya yang pertama bahagia', 'Perkawinannya yang kedua bahagia', 'Perkawinannya yang kedua tidak bahagia', 'a'),
-(23, 2, 'Lima pembalap sepeda saling berpacu mencapai garis finish. satryo berhasil melewati Agus, tetapi tidak pernah dapat mengajar Joko. Sedangkan Amir gagal mengajar Tono, tetapi berhasil melewati Joko. Pembalap manakah yang berada di urutan terakhir?', 'Amir', 'Agus', 'Joko', 'Tono', 'Satryo', 'a'),
-(24, 2, 'Hari Selasa kemarin hujan lebih deras daripada hujan hari senin, tapi tidak sederas hari Minggu. Hari apakah yang hujan tidak deras', 'Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'a');
+(29, 1, 'Tidak semua guru hidup sejahtera. Semua artis hidup berkecukupan', 'Sebagian guru dan artis berkecukupan', 'Gaji guru kecil, semenntara honor artis besar', 'Sebagian artis hidup seperti sebagian guru', 'Sebagian guru gajinya besar, sementara semua artis pnghasilannya besar', 'Semua artis dan guru hidup berkecukupan', 'b'),
+(30, 1, 'Bendera indonesia berwana merah putih. Bendera belanda ditambah dengan warna biru', 'Warna bendera Indonesia dan Belanda serupa tapi tak sama', 'Warna bendera Indonesia  dan Belanda mirip-mirip', 'Warna bendera Indonesia bisa ditemukan dari bendera Belanda dengan cara merobek warna birunya', 'Warna bendera Belanda lebih bagus daripada warna bendera Indonesia', 'Warna bendera Indonesia lebih sederhana dari warna bendera Belanda', 'b'),
+(31, 1, 'Pak eko suplier kerta PT margono adalah distributor kertas ternama. Pembayaran di pak Eko bisa mundur, sementara di PT margono harus cash', 'Harga kertas  pak Eko lebih mahal dari pada PT Margono', 'Harga kertas Pak Eko lebih mahal karena bisa dibayar mundur', 'Harga kertas PT Margono lebih murah karena dibayar cash', 'walaupun dibayar mundur, Pak Eko tetap memiliki banyak cash flow untuk beli cash di PT Margono sehingga tetap bisa menuplai kertas ke semua relasinya', 'baik Pak Eko dan PT Margono sama saja dalam segala hal', 'a'),
+(32, 1, 'Rumahku di Villa Taman Bunga berlantai dua. Hotel sahid raya berlantai tujuh', 'Rumahku dan hotel sama enaknya', 'Rumahku menampun lebih sedikit orang daripada hotel sehinga lebih nyaman', 'Harga rumahku dan hotel sama mahalnya', 'Rumahku tak membutuhkan room boy karena hanya berlantai dua, sementara hotel Sahid Raya memiliki banyak room boy untuk merawat bangunannya', 'Rumahku dan hotel sama saja fungsinya', 'a'),
+(33, 1, 'Semua elang adalah pemakan daging. Sebagian binatang adalah Elang', 'Semua pemakan daging adalah elang', 'Sebagian elang pemakan daging', 'Sebagian binatang adalah pemakan daging', 'Sebagian elang tidak makan daging', 'Semua binatang pemakan daging', 'a'),
+(34, 1, 'Semua kepala sekolah adalah sarjana. Sementara kepala sekolah adalah guru', 'Sebagian guru dan artis hidup berkecukupan', 'Sementara sarjana adalah Kepala Sekolah', 'Sementara guru adalah Kepala Sekolah', 'Semua guru adalah sarjana', 'Semua tidak benar', 'a'),
+(35, 1, 'Semua anjing suka makan tulang. Sapi tidak makan daging', 'Anjing tidak makan daging', 'Sapi memakan tulang', 'Anjing dan sapi tidak memakan tulang dan tidak makan daging', 'Anjing sama dengan sapi', 'Semua pernyataan salah', 'a'),
+(36, 1, 'Semua jenis burung bisa terbang. Semua ayam memiliki sayap', 'Semua burung memiliki sayap', 'Semua ayam bisa terbang', 'Sementara ayam bisa terbang', 'Semua ayam termasuk jenis burung', 'Semua ayam bukan termasuk jenis burung', 'a'),
+(37, 1, 'Semua penulis harus kreatif. Sementara novelis tidak kreatif. ', 'Sementara novelis bukan penulis', 'Tidak ada penulis yang Novelis', 'Sementara orang yang kreatif bukan penulis', 'Sementara novelis kreatif ', 'Semua novelis Kreatif', 'a'),
+(38, 1, 'Semua orang yang bertitel MBA hidup dengan makmur. Sebagian orang yang bertitel MBA melakukan usaha wiraswasta', 'Semua wiraswastawan bertitel MBA', 'Semua wiraswasta hidup makmur', 'Semua wiraswastawan yang hidupnya makmur bertitel MBA', 'Semua MBA yang berwiraswasta  hidup dengan makmur', 'Salah semua', 'a'),
+(39, 2, 'Umar Tika sepuluh tahun, Setengah umur Dina dan tiga tahun lebih muda dari Nurul. Siapakah yang paling tua?', 'Tika', 'Dina', 'Nurul', 'Tika dan Dina', 'Nurul dan Tika', 'b'),
+(40, 2, 'Reno adiknya reni. Roni kakaknya renoo dan usianya lebih tua daru oada reni, Suaoajah yang usiany paling tua?', 'Reno', 'Roni', 'Reni', 'Romi', 'Remi', 'b'),
+(41, 2, 'Profuksi kelapa sawit kita tahun ini merosot, tetapi kualitasnya lebih baik', 'Kualitas kelapa sawait tahun terdahulu kurang baik', 'Kelapa sawit kita pasti laku dipasaran', 'Kita tidak menderita kerugian', 'Ada yang besar dalam produksi kelapa sawit', 'semuanya salah', 'a'),
+(42, 2, 'Jika B lewat C harus tambah D. Sebagian B tudaj punya D jadi', 'tak punya D', 'semua B lewat C', 'Semua C tak punya D', 'Sebagian B tak punya A', 'Sebagian B tidak lewat C', 'a'),
+(43, 2, 'Bila A>B; Q>C; R>D, sedangkan A>Q>R dan B>C>D', 'R>B; Q>B', 'D<A; C>R; B>Q', 'D<A; C<R; B<Q', 'A>C>D; D<Q<A', 'semuanya salah', 'a'),
+(44, 2, 'Lina lita dan bina senang tennis. Rika dan riga tidak suka tennis. Lita dan rika mmakai topi. Siapakah yang topinya  jatuh ketika bermain tennis', 'Lina', 'Lita', 'Vita ', 'Rika', 'semuanya salah', 'a'),
+(45, 2, 'Kalau ada tamu, katakan saja bahwa saya akan kembali pukul tiga, kecuali ada urusan penting yang mendadak', 'Kalau saya kembali pukul tiga, pasti ada tamu', 'Akan ada tamu, tetapi saya tidak dapat menemuinya', 'Kalau jam tiga saya belum kembali, tamu tidak usah menunggu', 'Kalau ada urusan penting yang mendadak, saya akan kembali pukul tiga', 'semuanya benar', 'a'),
+(46, 2, 'Setelah tiga tahun hidup menjanda, Susan menikah lagi. Akan tetapi perkawinan yang kedua tidak lebih berhasil dari yang pertama', 'Suaminya yang kedua juga meningal', 'Suaminya yang pertama meninggal', 'Perkawinannya yang pertama bahagia', 'Perkawinannya yang kedua bahagia', 'Perkawinannya yang kedua tidak bahagia', 'a'),
+(47, 2, 'Lima pembalah sepeda saling berpacu mencapai garis finish. Sutaryo berhasil melewati Agus, tetapi tidak pernah dapat mengejar joko. Sedangkan Amir gagal mengejar Tono, tetapi berhasil melewati joko.  Pembalap manakah yang berada di urutan terakhir?', 'Amir', 'Agus', 'Joko', 'Tono', 'Satryo', 'a'),
+(48, 2, 'Hari selasa kemarin hujan lebih deras daripada senin, tapi tidak sederas hari minggu. Hari apakah yang hujannya tidak deras', 'Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'a'),
+(49, 29, 'Ketika muncul suatu masalah dalam pekerjaan yang kebetulan ada kaitannya dengan hal-hal yang menjadi kewajiban saya, maka saya', 'Mencari kambing hitam penyebab masalah', 'Akan bertangung jawab', 'Membiarkan masalah tetap berlangsung', 'Melihat dulu adakah orang lain yang bersalah', 'Mungkin ada pihak lain harus bertanggung jawab', 'd'),
+(50, 29, 'Kedua panitia kegiatan harus membuat laporan pertanggungjawaban. sebagai ketua maka', 'Saya menugaskan pembuatan laporan kepada anak buah', 'Saya bersama anak buah menyusun laporan', 'Saya sendiri yang menyusun laporan sebab tak ingin ada kesalahan yang dibuat oleh anak buah', 'Laporan dibuat oleh sekretaris', 'Tim khusus harus dibentuk untuk membuat laporan tersebut', 'a'),
+(51, 29, 'Jika diberikan tugas kantor yang berat oleh atasan, maka saya', 'Jujur mengatakan pada atasan tugasnya terlalu berat', 'Memnta keringanan', 'Meminta rekan kerja membantu', 'Berusaha menyelesaikan sebaik-baiknya ', 'Menolak dan berterus terang tugasnya terlalu berat', 'a');
 
 -- --------------------------------------------------------
 
@@ -521,9 +654,7 @@ CREATE TABLE `users` (
   `agama` varchar(20) DEFAULT NULL,
   `tanggallahir` date DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
-  `provider_id` varchar(255) DEFAULT NULL,
   `username` varchar(30) DEFAULT NULL,
-  `user_image` varchar(30) NOT NULL DEFAULT 'default.svg',
   `password_hash` varchar(255) NOT NULL,
   `reset_hash` varchar(255) DEFAULT NULL,
   `reset_at` datetime DEFAULT NULL,
@@ -546,10 +677,10 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `informasikesehatan`, `statusperkawinan`, `pendidikanterakhir`, `golongandarah`, `agama`, `tanggallahir`, `avatar`, `provider_id`, `username`, `user_image`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`, `nik`, `jeniskelamin`, `alamat`, `nohp`) VALUES
-(1, 'togar', 'togarma29@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.svg', '', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, 'asatogarmagultom@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'togarma', 'default.svg', '$2y$10$c4WxjEmpc7mtemuIu1ccYe0Gb6Fs1orlBVTsRRRbzgmjwv5kTg/0i', NULL, NULL, NULL, '0b7c50ed9f03f1840a5e7a698acbdbba', NULL, NULL, 0, 0, '2021-09-19 03:14:01', '2021-09-19 03:14:01', NULL, NULL, NULL, NULL, NULL),
-(3, 'Betsyeba Marbun', 'betsyebamarbun359@gmail.com', NULL, 'Belum Menikah', 'S1', 'B', 'Kristen', '1996-01-09', 'betsyebamarbun_1.jpg', NULL, 'betsyebamarbun', 'default.svg', '$2y$10$O4WlEO5DaN2yDBXbL7qLHOi5CrCQYpGTI0uEtuIrADzz/juaVJfVq', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-19 03:17:44', '2021-10-29 08:25:12', NULL, 123432231, 'perempuan', 'Jl Hm Yamin Gang India No 2', '085212312312');
+INSERT INTO `users` (`id`, `name`, `email`, `informasikesehatan`, `statusperkawinan`, `pendidikanterakhir`, `golongandarah`, `agama`, `tanggallahir`, `avatar`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`, `nik`, `jeniskelamin`, `alamat`, `nohp`) VALUES
+(1, 'togar', 'togarma29@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, 'asatogarmagultom@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'togarma', '$2y$10$c4WxjEmpc7mtemuIu1ccYe0Gb6Fs1orlBVTsRRRbzgmjwv5kTg/0i', NULL, NULL, NULL, '0b7c50ed9f03f1840a5e7a698acbdbba', NULL, NULL, 0, 0, '2021-09-19 03:14:01', '2021-09-19 03:14:01', NULL, NULL, NULL, NULL, NULL),
+(3, 'Betsyeba Marbun', 'betsyebamarbun359@gmail.com', NULL, 'Belum Menikah', 'S1', 'B', 'Kristen', '1996-01-09', 'betsyeba.jpg', 'betsyebamarbun', '$2y$10$O4WlEO5DaN2yDBXbL7qLHOi5CrCQYpGTI0uEtuIrADzz/juaVJfVq', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-19 03:17:44', '2021-10-29 08:25:12', NULL, 123432231, 'perempuan', 'Jl Hm Yamin Gang India No 2', '085212312312');
 
 --
 -- Indexes for dumped tables
@@ -645,6 +776,19 @@ ALTER TABLE `jenistes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `kriterialowongan`
+--
+ALTER TABLE `kriterialowongan`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kriterialowongan_lowonganid_foreign` (`lowonganid`);
+
+--
+-- Indeks untuk tabel `listlowongan`
+--
+ALTER TABLE `listlowongan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -720,7 +864,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -744,7 +888,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT untuk tabel `datakeluarga`
 --
 ALTER TABLE `datakeluarga`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `isian`
@@ -756,25 +900,37 @@ ALTER TABLE `isian`
 -- AUTO_INCREMENT untuk tabel `jawaban`
 --
 ALTER TABLE `jawaban`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=313;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenistes`
 --
 ALTER TABLE `jenistes`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT untuk tabel `kriterialowongan`
+--
+ALTER TABLE `kriterialowongan`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `listlowongan`
+--
+ALTER TABLE `listlowongan`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendidikanformal`
 --
 ALTER TABLE `pendidikanformal`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendidikannonformal`
@@ -792,19 +948,19 @@ ALTER TABLE `pengalamankerja`
 -- AUTO_INCREMENT untuk tabel `pertanyaanessay`
 --
 ALTER TABLE `pertanyaanessay`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahap_i_a`
 --
 ALTER TABLE `tahap_i_a`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT untuk tabel `ujianpilihanberganda`
 --
 ALTER TABLE `ujianpilihanberganda`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -861,6 +1017,12 @@ ALTER TABLE `isian`
 ALTER TABLE `jawaban`
   ADD CONSTRAINT `jawaban_jenisTes_foreign` FOREIGN KEY (`jenisTes`) REFERENCES `jenistes` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `jawaban_userId_foreign` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `kriterialowongan`
+--
+ALTER TABLE `kriterialowongan`
+  ADD CONSTRAINT `kriterialowongan_lowonganid_foreign` FOREIGN KEY (`lowonganid`) REFERENCES `listlowongan` (`id`) ON DELETE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `pendidikanformal`

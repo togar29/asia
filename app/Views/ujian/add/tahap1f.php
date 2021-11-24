@@ -14,7 +14,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-12">
-          <h4>Tahap 1 (60 Menit)</h4>
+          <h4>Tahap 1 Bagain F (10 Menit)</h4>
           <hr>
         </div>
       </div>
@@ -23,8 +23,6 @@
 
         <div class="col-md-12">
 
-          <h5 class="offset-5">Tahap I (Waktu: 60 Menit)</h5>
-          <hr>
           <!-- Tuliskan dalam Bentuk Kata-Kata-->
           <form action="/ujian/savebagian1f" method="POST">
             <h6>Penjumlahan, Pengurangan, Perkalian dan Pembagian</h6><br>

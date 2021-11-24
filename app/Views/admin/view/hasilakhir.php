@@ -11,7 +11,7 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Tahap 1 Bagian B</h6>
+      <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
     </div>
     <div class="card-body">
 
@@ -46,8 +46,8 @@
               <td class="col-2">Admin Gudang</td>
               <td class="col-2">Gudang</td>
               <td class="col-1 bg-warning text-dark">65%</td>
-              <td class="col-1 bg-success text-dark">90%</td>
-              <td class="col-1 bg-warning text-dark">60%</td>
+              <td class="col-1 bg-warning text-dark">650%</td>
+              <td class="col-1 bg-danger text-dark">50%</td>
               <td class="col-1 bg-danger text-dark">50%</td>
             </tr>
           </tbody>

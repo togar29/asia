@@ -35,7 +35,7 @@
                 <td class="col-6"><?= $k['pertanyaan']; ?></td>
                 <td class="col-1"><?= $k['kunci'] ?></td>
                 <td class="col-3">
-                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
+                  <a href="" data-toggle="modal" data-target="#modalEdit<?= $k['id']; ?>" class="btn btn-primary"> Edit</a>
                   <a href="" id="delete<?= $i; ?>" class="btn btn-danger">Hapus</a>
                 </td>
               </tr>
@@ -110,6 +110,57 @@
       </div>
     </div>
   </div>
+
+
+  <!--Modal Edit-->
+  <?php foreach ($soal as $k) : ?>
+
+    <div class="modal fade" id="modalEdit<?= $k['id']; ?>" role="dialog" aria-labelledby="modelEdit<?= $k['id']; ?>" aria-hidden="true">
+      <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSayaLabel">Edit Soal <?= $jenistes['jenisTes']; ?></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form action="saveteskecocokan" method="POST">
+              <?= csrf_field(); ?>
+              <div class="table-responsif">
+                <div class="form-group row">
+
+                  <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+
+                        <th scope="col">Soal</th>
+                        <th scope="col">Kunci Jawaban</th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="text" name="soal" value="<?= $k['pertanyaan']; ?>" class="form-control"></td>
+                        <td><input type="text" name="kunci" value="<?= $k['kunci']; ?>" class="form-control"></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button name="submit" type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
 
 
 

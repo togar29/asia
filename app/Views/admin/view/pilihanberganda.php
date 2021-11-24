@@ -9,7 +9,7 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
+      <h6 class="m-0 font-weight-bold text-primary"><?= $jenistes['jenisTes']; ?></h6>
     </div>
     <div class="card-body">
       <div class="row py-2">
@@ -44,7 +44,7 @@
                 <td><?= $k['e']; ?></td>
                 <td><?= $k['kunci']; ?></td>
                 <td>
-                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
+                  <a href="" data-toggle="modal" data-target="#modalEdit<?= $k['id']; ?>" class="btn btn-primary"> Edit</a>
                   <br><br>
                   <a href="" id="delete<?= $i; ?>" class="btn btn-danger"> Delete</a>
                 </td>
@@ -62,6 +62,90 @@
 
 
 </div>
+
+
+<!--Modal Edit-->
+<?php foreach ($pilgan as $k) : ?>
+
+  <div class="modal fade" id="modalEdit<?= $k['id']; ?>" role="dialog" aria-labelledby="modelEdit<?= $k['id']; ?>" aria-hidden="true">
+    <div class="modal-dialog  modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSayaLabel">Edit Soal <?= $jenistes['jenisTes']; ?></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="/admin/savepilihanberganda" method="POST">
+            <?= csrf_field(); ?>
+            <input id="page" style="display: none;" name="page" class="form-control here" type="text" value="pilihanberganda">
+            <div class="form-group row">
+              <label for="jenistes" class="col-4 col-form-label">Jenis tes</label>
+              <div class="col-8">
+                <input class="form-control" name="namate" readonly=true value="<?= $jenistes['jenisTes']; ?>" type="text">
+                <input class="form-control" style="display: none;" name="jenistes" readonly=true value="<?= $jenistes['id']; ?>" type="text">
+                <input class="form-control" style="display: none;" name="slug" readonly=true value="<?= $slug; ?>" type="text">
+              </div>
+            </div>
+
+            <input id="page" style="display: none;" name="page" class="form-control here" type="text" value="jenistes">
+            <div class="form-group row">
+              <label for="soal" class="col-4 col-form-label">Soal</label>
+              <div class="col-8">
+                <textarea id="soal" name="soal" cols="40" rows="4" class="form-control"><?= $k['soal']; ?></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="a" class="col-4 col-form-label">Jawaban A</label>
+              <div class="col-8">
+                <input id="a" name="a" value="<?= $k['a']; ?>" placeholder="jawaban A" class="form-control here" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="b" class="col-4 col-form-label">jawaban B</label>
+              <div class="col-8">
+                <input id="b" name="b" value="<?= $k['b']; ?>" placeholder="Jawaban B" class="form-control here" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="c" class="col-4 col-form-label">Jawaban C</label>
+              <div class="col-8">
+                <input id="c" name="c" value="<?= $k['c']; ?>" placeholder="jawaban C" class="form-control here" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="d" class="col-4 col-form-label">Jawaban D</label>
+              <div class="col-8">
+                <input id="d" name="d" value="<?= $k['d']; ?>" placeholder="Jawaban D" class="form-control here" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="e" class="col-4 col-form-label">Jawaban E</label>
+              <div class="col-8">
+                <input id="e" name="e" value="<?= $k['e']; ?>" placeholder="Jawaban E" class="form-control here" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="jenistes" class="col-4 col-form-label">Kunci Jawaban</label>
+              <div class="col-8">
+                <input type="text" class="form-control " name="key<?= $k['kunci']; ?>" value="<?= $k['kunci']; ?>">
+              </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button name="submit" type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<?php endforeach; ?>
+
+
 
 <!-- Modals Untuk Tambah data -->
 <div class="modal fade" id="modalSaya" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">
@@ -150,12 +234,12 @@
 
 
 <script>
-  function mouseOveredit(id) {
-    document.getElementById(id).innerHTML = 'edit';
-  }
-
-  function mouseOverdelete(id) {
-    document.getElementById(id).innerHTML = 'hapus';
+  function pilihan(kunci) {
+    if (kunci == "A") {
+      document.getElementById("a").setAttribute(selected);
+    } else if (kunci == "B") {
+      document.getElementById("b").setAttribute(selected);
+    }
   }
 </script>
 

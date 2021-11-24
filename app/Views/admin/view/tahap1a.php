@@ -9,7 +9,7 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">List Lowongan Kerja</h6>
+      <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
     </div>
     <div class="card-body">
       <div class="row ">
@@ -37,11 +37,13 @@
                 <td class="col-3"><?= $k['nilaiB']; ?></td>
                 <td class="col-2"><?= $k['kunci']; ?></td>
                 <td class="col-3">
-                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
+                  <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit<?= $k['id']; ?>"> Edit</a>
                   <a href="" id="delete<?= $i; ?>" class="btn btn-danger">Hapus</a>
                 </td>
               </tr>
               <?php $i++; ?>
+
+
             <?php endforeach; ?>
           </tbody>
         </table>
@@ -53,6 +55,53 @@
   </div>
 
 
+  <!--Modal Edit-->
+  <?php foreach ($kecocokan as $k) : ?>
+
+    <div class="modal fade" id="modalEdit<?= $k['id']; ?>" role="dialog" aria-labelledby="modelEdit<?= $k['id']; ?>" aria-hidden="true">
+      <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSayaLabel">Edit Soal Tahp 1 Bagian A</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form action="saveteskecocokan" method="POST">
+              <?= csrf_field(); ?>
+              <div class="table-responsif">
+                <div class="form-group row">
+                  <small id="tampil" class="form-text text-muted">Kunci jawaban akan otomatis terisi oleh aplikasi</small>
+                  <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+
+                        <th scope="col">nilai 1</th>
+                        <th scope="col">nilai 2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="text" name="nilaia" value="<?= $k['nilaiA']; ?>" class="form-control"></td>
+                        <td><input type="text" name="nilaib" value="<?= $k['nilaiB']; ?>" class="form-control"></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button name="submit" type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
   <!-- Modals Untuk Tambah data -->
   <div class="modal fade" id="modalSaya" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">
     <div class="modal-dialog  modal-lg" role="document">

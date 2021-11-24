@@ -34,7 +34,7 @@
                 <td class="col-1"><?= $i + 1; ?></td>
                 <td class="col-8"><?= $k['pertanyaan']; ?></td>
                 <td class="col-3">
-                  <a href="" id="edit<?= $i; ?>" class="btn btn-primary"> Edit</a>
+                  <a href="" data-toggle="modal" data-target="#modalEdit<?= $k['id']; ?>" class="btn btn-primary"> Edit</a>
                   <a href="" id="delete<?= $i; ?>" class="btn btn-danger">Hapus</a>
                 </td>
               </tr>
@@ -50,6 +50,51 @@
     </div>
   </div>
 
+
+  <!--Modal Edit Soal-->
+  <?php foreach ($soal as $k) : ?>
+
+    <div class="modal fade" id="modalEdit<?= $k['id']; ?>" role="dialog" aria-labelledby="modelEdit<?= $k['id']; ?>" aria-hidden="true">
+      <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSayaLabel">Edit Soal <?= $jenistes['jenisTes']; ?></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form action="saveteskecocokan" method="POST">
+              <?= csrf_field(); ?>
+              <div class="table-responsif">
+                <div class="form-group row">
+                  <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th scope="col">Soal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><textarea name="" id="" cols="20" rows="10" class="form-control"><?= $k['pertanyaan']; ?></textarea>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button name="submit" type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
 
   <!-- Modals Untuk Tambah data -->
   <div class="modal fade" id="modalSaya" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">

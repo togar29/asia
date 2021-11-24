@@ -12,12 +12,6 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="/pelamar">
-          <i class="far fa-address-card"></i>
-          <span>Profile</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -28,6 +22,24 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+          <i class="far fa-address-card"></i>
+          <span>Profil</span>
+        </a>
+        <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Test Tahap 1</h6>
+            <a class="collapse-item" href="/pelamar/datakeluargaview">Data Keluarga</a>
+            <a class="collapse-item" href="/pelamar/pendidikanformalview">Pendidikan Formal</a>
+            <a class="collapse-item" href="/pelamar/pendidikannonformalview">Pendidikan Non-Formal</a>
+            <a class="collapse-item" href="/pelamar/pengalamankerjaadd">Pengalaman Kerja</a>
+
+          </div>
+        </div>
+      </li>
+
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
@@ -59,8 +71,8 @@
 
       <!-- Nav Item - Hasil Akhir -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
+        <a class="nav-link" href="/admin/hasilakhir">
+          <i class=" fas fa-fw fa-table"></i>
           <span>Hasil Akhir</span></a>
       </li>
 

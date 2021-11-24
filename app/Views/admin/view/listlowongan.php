@@ -11,7 +11,7 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Tahap 1 Bagian B</h6>
+      <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
     </div>
     <div class="card-body">
       <div class="row py-2">
@@ -24,18 +24,20 @@
           <thead>
             <tr class="text-center  d-flex">
               <th class="col-1">#</th>
-              <th class="col-6">Nama Lowongan</th>
+              <th class="col-5">Nama Lowongan</th>
               <th class="col-3">Devisi</th>
               <th class="col-1">Status</th>
+              <th class="col-1">Action</th>
               <th class="col-1">Rincian</th>
             </tr>
           </thead>
           <tbody>
             <tr class="accordion-toggle collapsed d-flex" id="accordion1" onclick="hiderow('no1','tombol1')" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
               <td class="col-1">1</td>
-              <td class="col-6">Assembling</td>
+              <td class="col-5">Assembling</td>
               <td class="col-3">Assembling</td>
               <td class="col-1 bg-success text-dark">Aktif</td>
+              <td class="col-1 expand-button"><a href="/admin" class="btn btn-primary">Edit</a></td>
               <td class="col-1 expand-button"><a href="#" id="tombol1" class="btn btn-primary">+</a></td>
             </tr>
             <tr class="hide-table-padding " id="no1" style="display: none;">
@@ -67,9 +69,10 @@
 
             <tr class="accordion-toggle collapsed d-flex" id="accordion2" onclick="hiderow('no2','tombol2')" data-toggle="collapse" data-parent="#accordion1" href="#collapsetwo">
               <td class="col-1">1</td>
-              <td class="col-6">Admin Gudang</td>
+              <td class="col-5">Admin Gudang</td>
               <td class="col-3">Gudang</td>
               <td class="col-1 bg-danger text-dark">Tidak Aktif</td>
+              <td class="col-1 expand-button"><a href="/admin" class="btn btn-primary">Edit</a></td>
               <td class="col-1 expand-button"><a href="#" id="tombol2" class="btn btn-primary">+</a></td>
             </tr>
             <tr class="hide-table-padding" id="no2" style="display: none;">

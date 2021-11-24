@@ -63,7 +63,7 @@ class Admin extends BaseController
 	{
 		$listlowongan = $this->listlowonganModel->findAll();
 		$data = [
-			'title' => 'Daftar Lowongan Kerja',
+			'title' => 'Hasil Seleksi Akhir',
 			'listlowongan' => $listlowongan
 		];
 		return view('admin/view/hasilakhir', $data);
@@ -95,7 +95,7 @@ class Admin extends BaseController
 	{
 		$kecocokan = $this->teskecocokanModel->findAll();
 		$data = [
-			'title' => 'Tahap 1 A',
+			'title' => 'Tahap 1 Bagian A',
 			'kecocokan' => $kecocokan
 		];
 		return view('admin/view/tahap1a', $data);
