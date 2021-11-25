@@ -54,9 +54,17 @@
 
       <!-- Nav Item - Interview -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseinterview" aria-expanded="true" aria-controls="collapseinterview">
           <i class="fas fa-video"></i>
-          <span>Interview</span></a>
+          <span>Interview</span>
+        </a>
+        <div id="collapseinterview" class="collapse" aria-labelledby="headingthree" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/admin/jadwalinterview">Jadwal Interview</a>
+            <a class="collapse-item" href="/admin/tahapessay/pertanyaan-interview">Pertanyaan Interview</a>
+
+          </div>
+        </div>
       </li>
 
 

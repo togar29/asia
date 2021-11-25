@@ -155,6 +155,7 @@ class Admin extends BaseController
 		];
 		return view('admin/view/tahap2b', $data);
 	}
+
 	public function tahapessay($slug)
 	{
 		$jenistess = $this->jenistesModel->where(['slug' => $slug])->first();
@@ -177,7 +178,32 @@ class Admin extends BaseController
 		return view('admin/add/pertanyaanessay', $data);
 	}
 
+	public function jadwalinterview()
+	{
 
+		$data = [
+			'title' => 'Jadwal Interview',
+
+		];
+		return view('admin/view/jadwalinterview', $data);
+	}
+	public function interview()
+	{
+		$jenistess = $this->jenistesModel->where(['slug' => 'pertanyaan-interview'])->first();
+		$pertanyaanessay = $this->pertanyaanessayModel->where(['jenisTes' => $jenistess['id']])->orderBy('id', 'asc')->findAll();
+		$data = [
+			'title' => 'Interview',
+			'pertanyaanessay' => $pertanyaanessay,
+		];
+		return view('admin/view/interview', $data);
+	}
+
+
+
+
+
+
+	//Simpan
 	public function save()
 	{
 		$slug = url_title($this->request->getVar('jenisTes'), '-', true);

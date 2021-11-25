@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Nov 2021 pada 01.03
+-- Waktu pembuatan: 25 Nov 2021 pada 01.07
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -168,7 +168,8 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (62, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-21 01:06:15', 1),
 (63, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-21 01:06:16', 1),
 (64, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-21 06:09:54', 1),
-(65, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-23 06:30:28', 1);
+(65, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-23 06:30:28', 1),
+(66, '::1', 'betsyebamarbun359@gmail.com', 3, '2021-11-24 16:12:19', 1);
 
 -- --------------------------------------------------------
 
@@ -261,6 +262,21 @@ INSERT INTO `datakeluarga` (`id`, `userId`, `hubungan`, `nama`, `alamat`, `nohp`
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `hasilseleksi`
+--
+
+CREATE TABLE `hasilseleksi` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `userId` int(10) UNSIGNED NOT NULL,
+  `hasilData` int(10) UNSIGNED NOT NULL,
+  `hasiltes` int(10) UNSIGNED NOT NULL,
+  `interview` int(10) UNSIGNED NOT NULL,
+  `hasilakhir` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `isian`
 --
 
@@ -269,6 +285,19 @@ CREATE TABLE `isian` (
   `jenisTes` int(11) UNSIGNED NOT NULL,
   `soal` varchar(255) DEFAULT NULL,
   `kunci` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `jadwalinterview`
+--
+
+CREATE TABLE `jadwalinterview` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `userId` int(11) UNSIGNED NOT NULL,
+  `tanggal` date NOT NULL,
+  `waktu` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -336,7 +365,8 @@ INSERT INTO `jenistes` (`id`, `jenisTes`, `keterangan`, `slug`) VALUES
 (10, 'Tahap 1 Bagian G', 'Tes Kepribadian', 'tahap-1-bagian-g'),
 (11, 'Tahap 2 Bagian B', 'Pertanyaan', 'tahap-2-bagian-b'),
 (29, 'Tahap 2 Bagian A', 'Pilihan Berganda', 'tahap-2-bagian-a'),
-(30, 'Test Psikologi', 'Tahap 2', 'test-psikologi');
+(30, 'Test Psikologi', 'Tahap 2', 'test-psikologi'),
+(31, 'Pertanyaan Interview', 'Pertanyaan Interview', 'pertanyaan-interview');
 
 -- --------------------------------------------------------
 
@@ -397,7 +427,9 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (9, '2021-10-07-132553', 'App\\Database\\Migrations\\Createpertanyaanprofil', 'default', 'App', 1633613577, 9),
 (10, '2021-10-07-133412', 'App\\Database\\Migrations\\Createjawaban', 'default', 'App', 1633613815, 10),
 (11, '2021-11-07-083207', 'App\\Database\\Migrations\\Listlowongan', 'default', 'App', 1636274098, 11),
-(12, '2021-11-07-145820', 'App\\Database\\Migrations\\DetailLowongan', 'default', 'App', 1636297323, 12);
+(12, '2021-11-07-145820', 'App\\Database\\Migrations\\DetailLowongan', 'default', 'App', 1636297323, 12),
+(13, '2021-11-24-222223', 'App\\Database\\Migrations\\CreateJadwalinterview', 'default', 'App', 1637793399, 13),
+(14, '2021-11-24-224515', 'App\\Database\\Migrations\\Updatejadwal', 'default', 'App', 1637798483, 14);
 
 -- --------------------------------------------------------
 
@@ -442,8 +474,7 @@ CREATE TABLE `pendidikannonformal` (
   `lamaKursus` int(10) UNSIGNED NOT NULL,
   `tahun` int(4) UNSIGNED NOT NULL,
   `keterangan` text DEFAULT NULL,
-  `sertifikat` varchar(20) DEFAULT NULL,
-  `dibiayaiOleh` varchar(20) DEFAULT NULL
+  `sertifikat` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -538,7 +569,14 @@ INSERT INTO `pertanyaanessay` (`id`, `jenisTes`, `pertanyaan`, `kunci`) VALUES
 (156, 10, 'coba coab', ''),
 (157, 11, 'Seberapa baik anda mengakomodasi cara-cara penyelesaian tugas yang diinginkan oleh mayoritas anggota tim?', ''),
 (158, 11, 'Seberapa baik anda mengikuti jadwal kerja yang telah menjadi kesepakatan tim?', ''),
-(159, 11, 'Seberapa baik anda berkmunikasi denan rekan kerja lainnya untuk kelancara tugas tim?', '');
+(159, 11, 'Seberapa baik anda berkmunikasi denan rekan kerja lainnya untuk kelancara tugas tim?', ''),
+(160, 31, 'Dari mana anda memperoleh informasi mengenai perusahaan kami sehingga anda mengajukan lamaran kerja? jelaskan!', ''),
+(161, 31, 'Apakah anda memiliki kenalan atau keluarga yanng bekerja di perusashaan ini? jika ya, jelaskan!', ''),
+(162, 31, 'Hobby di waktu luang anda dipergunakan untuk apa?', ''),
+(163, 31, 'Apakah anda pernah berurusan dengan pihak berwajib karena terlibat tinda kriminal?', ''),
+(164, 31, 'Perilaku saat interview', ''),
+(165, 31, 'Pengunaan Bahasa', ''),
+(166, 31, 'Karakter', '');
 
 -- --------------------------------------------------------
 
@@ -755,11 +793,25 @@ ALTER TABLE `datakeluarga`
   ADD KEY `datakeluarga_userId_foreign` (`userId`);
 
 --
+-- Indeks untuk tabel `hasilseleksi`
+--
+ALTER TABLE `hasilseleksi`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `hasilseleksi_user` (`userId`);
+
+--
 -- Indeks untuk tabel `isian`
 --
 ALTER TABLE `isian`
   ADD PRIMARY KEY (`id`),
   ADD KEY `isian_jenisTes_foreign` (`jenisTes`);
+
+--
+-- Indeks untuk tabel `jadwalinterview`
+--
+ALTER TABLE `jadwalinterview`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jadwal_users` (`userId`);
 
 --
 -- Indeks untuk tabel `jawaban`
@@ -864,7 +916,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -891,9 +943,21 @@ ALTER TABLE `datakeluarga`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT untuk tabel `hasilseleksi`
+--
+ALTER TABLE `hasilseleksi`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `isian`
 --
 ALTER TABLE `isian`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `jadwalinterview`
+--
+ALTER TABLE `jadwalinterview`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -906,7 +970,7 @@ ALTER TABLE `jawaban`
 -- AUTO_INCREMENT untuk tabel `jenistes`
 --
 ALTER TABLE `jenistes`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT untuk tabel `kriterialowongan`
@@ -924,7 +988,7 @@ ALTER TABLE `listlowongan`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendidikanformal`
@@ -948,7 +1012,7 @@ ALTER TABLE `pengalamankerja`
 -- AUTO_INCREMENT untuk tabel `pertanyaanessay`
 --
 ALTER TABLE `pertanyaanessay`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahap_i_a`
@@ -1006,10 +1070,22 @@ ALTER TABLE `datakeluarga`
   ADD CONSTRAINT `datakeluarga_userId_foreign` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
+-- Ketidakleluasaan untuk tabel `hasilseleksi`
+--
+ALTER TABLE `hasilseleksi`
+  ADD CONSTRAINT `hasilseleksi_user` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Ketidakleluasaan untuk tabel `isian`
 --
 ALTER TABLE `isian`
   ADD CONSTRAINT `isian_jenisTes_foreign` FOREIGN KEY (`jenisTes`) REFERENCES `jenistes` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `jadwalinterview`
+--
+ALTER TABLE `jadwalinterview`
+  ADD CONSTRAINT `jadwal_users` FOREIGN KEY (`userId`) REFERENCES `users` (`id`);
 
 --
 -- Ketidakleluasaan untuk tabel `jawaban`
