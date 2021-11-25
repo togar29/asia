@@ -112,7 +112,13 @@ class Pelamar extends BaseController
 		return view('pelamar/add/pengalamankerjaadd', $data);
 	}
 
-
+	public function interview()
+	{
+		$data = [
+			'title' => 'Profil',
+		];
+		return view('pelamar/view/interview', $data);
+	}
 
 
 
